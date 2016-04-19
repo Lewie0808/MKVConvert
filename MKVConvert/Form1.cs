@@ -30,21 +30,20 @@ namespace MKVConvert
             {
                 if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("mkv") || currentFile.EndsWith("ts"))
                 {
-                    string sourcePath = @"F:\Convert";
+                    string sourcePath = @"F:\Convert\";
                     string directoryPath = Path.GetDirectoryName(txtBxSource.Text);
-
-                    foreach (var srcPath in Directory.GetFiles(sourcePath))
+                    
+                    foreach (var srcPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
                     {
                         MessageBox.Show(srcPath + ", " + srcPath.Replace(sourcePath, directoryPath));
                         //File.Copy(srcPath, srcPath.Replace(sourcePath, directoryPath), true);
                     }
 
-
                     MessageBox.Show("END");
 
+                    break;
 
                     // Create launch settings
-
                     ProcessStartInfo psi = new ProcessStartInfo();
                     psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
                     if (copyAudio)
@@ -253,6 +252,9 @@ namespace MKVConvert
             }
         }
 
-        
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
