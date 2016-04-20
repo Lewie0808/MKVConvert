@@ -68,23 +68,25 @@ namespace MKVConvert
                             MessageBox.Show("Convert folder is missing or inaccessible");
                         }
 
-                        string[] filePaths = Directory.GetFiles(txtBxSource.Text);
-                        foreach (string filePath in filePaths)
-                        {
-                            File.Delete(filePath);
-                        }
-                    }
+                        //    string[] filePaths = Directory.GetFiles(txtBxSource.Text);
+                        //    foreach (string filePath in filePaths)
+                        //    {
+                        //        File.Delete(filePath);
+                        //    }
+                        //}
 
-                    string sourcePath = @"F:\Convert\";
-                    string directoryPath = string.Empty;
+                        //string sourcePath = @"F:\Convert\";
+                        //string directoryPath = string.Empty;
 
-                    directoryPath = (txtBxSource.Text.EndsWith("\\")) ? Path.GetDirectoryName(txtBxSource.Text) : Path.GetDirectoryName(txtBxSource.Text + "\\");
+                        //directoryPath = (txtBxSource.Text.EndsWith("\\")) ? Path.GetDirectoryName(txtBxSource.Text) : Path.GetDirectoryName(txtBxSource.Text + "\\");
 
-                    directoryPath += "\\";
+                        //directoryPath += "\\";
 
-                    foreach (var srcPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
-                    {
-                        File.Copy(srcPath, srcPath.Replace(sourcePath, directoryPath), true);
+                        //foreach (var srcPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
+                        //{
+                        //    File.Copy(srcPath, srcPath.Replace(sourcePath, directoryPath), true);
+                        //}
+                        //File.Delete(@"F:\Convert\*.*");
                     }
                 }
             }
