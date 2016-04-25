@@ -13,8 +13,6 @@ namespace MKVConvert
         public Form1()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-
         }
 
         private void btnSD_Click(object sender, EventArgs e)
@@ -32,8 +30,18 @@ namespace MKVConvert
             {
                 if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("mkv") || currentFile.EndsWith("ts"))
                 {
-                    
+                    string sourcePath = @"F:\Convert";
+                    string directoryPath = Path.GetDirectoryName(txtBxSource.Text);
+
+                    foreach (var srcPath in Directory.GetFiles(sourcePath))
+                    {
+                        MessageBox.Show(srcPath + ", " + srcPath.Replace(sourcePath, directoryPath));
+                        //File.Copy(srcPath, srcPath.Replace(sourcePath, directoryPath), true);
+                    }
+
+
                     // Create launch settings
+
                     ProcessStartInfo psi = new ProcessStartInfo();
                     psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
                     if (copyAudio)
@@ -67,24 +75,27 @@ namespace MKVConvert
                         {
                             MessageBox.Show("Convert folder is missing or inaccessible");
                         }
-
-                        //string[] filePaths = Directory.GetFiles(txtBxSource.Text);
-                        //foreach (string filePath in filePaths)
-                        //{
-                        //    File.Delete(filePath);
-                        //}
-                    
-                        //string sourcePath = @"F:\Convert";
-                        //string targetPath = txtBxSource.Text;
-                        //if (!Directory.Exists(targetPath))
-                        //{
-                        //    Directory.CreateDirectory(targetPath);
-                        //}
-                        //foreach (var srcPath in Directory.GetFiles(sourcePath))
-                        //{
-                        //    File.Copy(srcPath, srcPath.Replace(sourcePath, targetPath), true);
-                        //}
                     }
+
+                    string[] filePaths = Directory.GetFiles(txtBxSource.Text);
+                    foreach (string filePath in filePaths)
+                    {
+                        File.Delete(filePath);
+                    }
+
+                    //string sourcePath = @"F:\Convert\";
+                    //string directoryPath = Path.GetDirectoryName(txtBxSource.Text);
+
+                    ////if (!Directory.Exists(directoryPath))
+                    ////{
+                    ////    Directory.CreateDirectory(directoryPath);
+                    ////}
+
+                    //foreach (var srcPath in Directory.GetFiles(sourcePath))
+                    //{
+                    //    MessageBox.Show(srcPath + ", " + srcPath.Replace(sourcePath, directoryPath));
+                    //    //File.Copy(srcPath, srcPath.Replace(sourcePath, directoryPath), true);
+                    //}
                 }
             }
         }
@@ -136,7 +147,23 @@ namespace MKVConvert
                         {
                             MessageBox.Show("Convert folder is missing or inaccessible");
                         }
+
+                        string[] filePaths = Directory.GetFiles(txtBxSource.Text);
+                        foreach (string filePath in filePaths)
+                        {
+                            File.Delete(filePath);
+                        }
                     }
+                    //string sourcePath = @"F:\Convert";
+                    //string targetPath = txtBxSource.Text;
+                    //if (!Directory.Exists(targetPath))
+                    //{
+                    //    Directory.CreateDirectory(targetPath);
+                    //}
+                    //foreach (var srcPath in Directory.GetFiles(sourcePath))
+                    //{
+                    //    File.Copy(srcPath, srcPath.Replace(sourcePath, targetPath), true);
+                    //}
                 }
             }
         }
@@ -187,7 +214,23 @@ namespace MKVConvert
                         {
                             MessageBox.Show("Convert folder is missing or inaccessible");
                         }
+
+                        string[] filePaths = Directory.GetFiles(txtBxSource.Text);
+                        foreach (string filePath in filePaths)
+                        {
+                            File.Delete(filePath);
+                        }
                     }
+                    //string sourcePath = @"F:\Convert";
+                    //string targetPath = txtBxSource.Text;
+                    //if (!Directory.Exists(targetPath))
+                    //{
+                    //    Directory.CreateDirectory(targetPath);
+                    //}
+                    //foreach (var srcPath in Directory.GetFiles(sourcePath))
+                    //{
+                    //    File.Copy(srcPath, srcPath.Replace(sourcePath, targetPath), true);
+                    //}
                 }
             }
         }
@@ -207,9 +250,6 @@ namespace MKVConvert
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
     }
 }

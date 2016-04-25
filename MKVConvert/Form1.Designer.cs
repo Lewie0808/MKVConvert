@@ -53,7 +53,6 @@
             this.btnHD = new System.Windows.Forms.Button();
             this.btnHD2HD = new System.Windows.Forms.Button();
             this.btnSourceBrow = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.grpBxFiles.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +84,6 @@
             // 
             // grpBxFiles
             // 
-            this.grpBxFiles.Controls.Add(this.btnClose);
             this.grpBxFiles.Controls.Add(this.label8);
             this.grpBxFiles.Controls.Add(this.label9);
             this.grpBxFiles.Controls.Add(this.label10);
@@ -112,7 +110,7 @@
             this.grpBxFiles.Controls.Add(this.txtBxSource);
             this.grpBxFiles.Location = new System.Drawing.Point(13, 13);
             this.grpBxFiles.Name = "grpBxFiles";
-            this.grpBxFiles.Size = new System.Drawing.Size(295, 364);
+            this.grpBxFiles.Size = new System.Drawing.Size(295, 339);
             this.grpBxFiles.TabIndex = 6;
             this.grpBxFiles.TabStop = false;
             this.grpBxFiles.Text = "Files";
@@ -298,21 +296,11 @@
             this.btnSourceBrow.UseVisualStyleBackColor = true;
             this.btnSourceBrow.Click += new System.EventHandler(this.btnSourceBrow_Click);
             // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(109, 326);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 27;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 389);
+            this.ClientSize = new System.Drawing.Size(321, 362);
             this.Controls.Add(this.grpBxFiles);
             this.Name = "Form1";
             this.Text = "Convert";
@@ -350,7 +338,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnClose;
     }
 }
 
