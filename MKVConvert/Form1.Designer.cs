@@ -53,7 +53,13 @@
             this.btnHD = new System.Windows.Forms.Button();
             this.btnHD2HD = new System.Windows.Forms.Button();
             this.btnSourceBrow = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtBxAfter = new System.Windows.Forms.TextBox();
+            this.txtBxBefore = new System.Windows.Forms.TextBox();
             this.grpBxFiles.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSD
@@ -110,7 +116,7 @@
             this.grpBxFiles.Controls.Add(this.txtBxSource);
             this.grpBxFiles.Location = new System.Drawing.Point(13, 13);
             this.grpBxFiles.Name = "grpBxFiles";
-            this.grpBxFiles.Size = new System.Drawing.Size(295, 339);
+            this.grpBxFiles.Size = new System.Drawing.Size(295, 333);
             this.grpBxFiles.TabIndex = 6;
             this.grpBxFiles.TabStop = false;
             this.grpBxFiles.Text = "Files";
@@ -296,17 +302,68 @@
             this.btnSourceBrow.UseVisualStyleBackColor = true;
             this.btnSourceBrow.Click += new System.EventHandler(this.btnSourceBrow_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtBxAfter);
+            this.groupBox1.Controls.Add(this.txtBxBefore);
+            this.groupBox1.Location = new System.Drawing.Point(13, 353);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(295, 84);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sizes";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(33, 58);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(29, 13);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "After";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(30, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Before";
+            // 
+            // txtBxAfter
+            // 
+            this.txtBxAfter.Location = new System.Drawing.Point(83, 58);
+            this.txtBxAfter.Name = "txtBxAfter";
+            this.txtBxAfter.Size = new System.Drawing.Size(169, 20);
+            this.txtBxAfter.TabIndex = 31;
+            this.txtBxAfter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBxBefore
+            // 
+            this.txtBxBefore.Location = new System.Drawing.Point(83, 19);
+            this.txtBxBefore.Name = "txtBxBefore";
+            this.txtBxBefore.Size = new System.Drawing.Size(169, 20);
+            this.txtBxBefore.TabIndex = 30;
+            this.txtBxBefore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 362);
+            this.ClientSize = new System.Drawing.Size(321, 449);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpBxFiles);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Convert";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpBxFiles.ResumeLayout(false);
             this.grpBxFiles.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -338,6 +395,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtBxAfter;
+        private System.Windows.Forms.TextBox txtBxBefore;
     }
 }
 
