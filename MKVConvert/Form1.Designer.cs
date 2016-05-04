@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnSD = new System.Windows.Forms.Button();
             this.txtBxSource = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,8 +59,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtBxAfter = new System.Windows.Forms.TextBox();
             this.txtBxBefore = new System.Windows.Forms.TextBox();
+            this.txtOutput = new System.Windows.Forms.TextBox();
+            this.grpBxDisplay = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.grpBxFiles.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.grpBxDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSD
@@ -308,9 +313,9 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtBxAfter);
             this.groupBox1.Controls.Add(this.txtBxBefore);
-            this.groupBox1.Location = new System.Drawing.Point(13, 353);
+            this.groupBox1.Location = new System.Drawing.Point(314, 262);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 84);
+            this.groupBox1.Size = new System.Drawing.Size(244, 84);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sizes";
@@ -318,7 +323,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(33, 58);
+            this.label12.Location = new System.Drawing.Point(9, 52);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 13);
             this.label12.TabIndex = 33;
@@ -327,7 +332,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(30, 22);
+            this.label11.Location = new System.Drawing.Point(6, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 13);
             this.label11.TabIndex = 32;
@@ -335,27 +340,60 @@
             // 
             // txtBxAfter
             // 
-            this.txtBxAfter.Location = new System.Drawing.Point(83, 58);
+            this.txtBxAfter.Location = new System.Drawing.Point(68, 52);
             this.txtBxAfter.Name = "txtBxAfter";
-            this.txtBxAfter.Size = new System.Drawing.Size(169, 20);
+            this.txtBxAfter.Size = new System.Drawing.Size(144, 20);
             this.txtBxAfter.TabIndex = 31;
             this.txtBxAfter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtBxBefore
             // 
-            this.txtBxBefore.Location = new System.Drawing.Point(83, 19);
+            this.txtBxBefore.Location = new System.Drawing.Point(68, 13);
             this.txtBxBefore.Name = "txtBxBefore";
-            this.txtBxBefore.Size = new System.Drawing.Size(169, 20);
+            this.txtBxBefore.Size = new System.Drawing.Size(144, 20);
             this.txtBxBefore.TabIndex = 30;
             this.txtBxBefore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtOutput
+            // 
+            this.txtOutput.Location = new System.Drawing.Point(6, 19);
+            this.txtOutput.Multiline = true;
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtOutput.Size = new System.Drawing.Size(387, 215);
+            this.txtOutput.TabIndex = 8;
+            this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
+            // 
+            // grpBxDisplay
+            // 
+            this.grpBxDisplay.Controls.Add(this.txtOutput);
+            this.grpBxDisplay.Location = new System.Drawing.Point(315, 13);
+            this.grpBxDisplay.Name = "grpBxDisplay";
+            this.grpBxDisplay.Size = new System.Drawing.Size(399, 243);
+            this.grpBxDisplay.TabIndex = 9;
+            this.grpBxDisplay.TabStop = false;
+            this.grpBxDisplay.Text = "Display";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(579, 275);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(135, 23);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 449);
+            this.ClientSize = new System.Drawing.Size(726, 350);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.grpBxDisplay);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpBxFiles);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Convert";
@@ -364,6 +402,8 @@
             this.grpBxFiles.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.grpBxDisplay.ResumeLayout(false);
+            this.grpBxDisplay.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -400,6 +440,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtBxAfter;
         private System.Windows.Forms.TextBox txtBxBefore;
+        private System.Windows.Forms.TextBox txtOutput;
+        private System.Windows.Forms.GroupBox grpBxDisplay;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 
