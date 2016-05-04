@@ -130,23 +130,23 @@ namespace MKVConvert
                         Process prc = new Process();
                         prc.StartInfo = psi;
 
-                        prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        //prc.Start();
+
+                        //prc.StartInfo.CreateNoWindow = true;
+                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        //prc.StartInfo.RedirectStandardOutput = true;
+                        //prc.StartInfo.UseShellExecute = false;
+                        //prc.OutputDataReceived += new DataReceivedEventHandler(prc_OutputDataReceived);
                         prc.Start();
 
-                        prc.StartInfo.CreateNoWindow = true;
-                        prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        prc.StartInfo.RedirectStandardOutput = true;
-                        prc.StartInfo.UseShellExecute = false;
-                        prc.OutputDataReceived += new DataReceivedEventHandler(prc_OutputDataReceived);
-                        prc.Start();
+                        //prc.BeginOutputReadLine();
 
-                        prc.BeginOutputReadLine();
+                        //prc.StartInfo.CreateNoWindow = true;
+                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
-                        prc.StartInfo.CreateNoWindow = true;
-                        prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
-                        prc.StandardOutput.ReadLine();
-                        prc.StandardOutput.ReadToEnd();
+                        //prc.StandardOutput.ReadLine();
+                        //prc.StandardOutput.ReadToEnd();
 
                         // Wait for process to exit
                         while (!prc.HasExited)
@@ -172,7 +172,7 @@ namespace MKVConvert
 
                         txtBxAfter.Text = InGB(afterSize);
 
-                        MessageBox.Show("Job completed");
+                        //MessageBox.Show("Job completed");
                     }
 
                     catch
@@ -215,23 +215,23 @@ namespace MKVConvert
                         Process prc = new Process();
                         prc.StartInfo = psi;
 
-                        prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        //prc.Start();
+
+                        //prc.StartInfo.CreateNoWindow = true;
+                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        //prc.StartInfo.RedirectStandardOutput = true;
+                        //prc.StartInfo.UseShellExecute = false;
+                        //prc.OutputDataReceived += new DataReceivedEventHandler(prc_OutputDataReceived);
                         prc.Start();
 
-                        prc.StartInfo.CreateNoWindow = true;
-                        prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        prc.StartInfo.RedirectStandardOutput = true;
-                        prc.StartInfo.UseShellExecute = false;
-                        prc.OutputDataReceived += new DataReceivedEventHandler(prc_OutputDataReceived);
-                        prc.Start();
+                        //prc.BeginOutputReadLine();
 
-                        prc.BeginOutputReadLine();
+                        //prc.StartInfo.CreateNoWindow = true;
+                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
-                        prc.StartInfo.CreateNoWindow = true;
-                        prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
-                        prc.StandardOutput.ReadLine();
-                        prc.StandardOutput.ReadToEnd();
+                        //prc.StandardOutput.ReadLine();
+                        //prc.StandardOutput.ReadToEnd();
 
                         // Wait for process to exit
                         while (!prc.HasExited)
