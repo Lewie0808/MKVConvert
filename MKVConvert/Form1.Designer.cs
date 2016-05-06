@@ -54,7 +54,6 @@
             this.btnHD = new System.Windows.Forms.Button();
             this.btnHD2HD = new System.Windows.Forms.Button();
             this.btnSourceBrow = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtBxAfter = new System.Windows.Forms.TextBox();
@@ -63,7 +62,6 @@
             this.grpBxDisplay = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpBxFiles.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.grpBxDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -307,23 +305,10 @@
             this.btnSourceBrow.UseVisualStyleBackColor = true;
             this.btnSourceBrow.Click += new System.EventHandler(this.btnSourceBrow_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txtBxAfter);
-            this.groupBox1.Controls.Add(this.txtBxBefore);
-            this.groupBox1.Location = new System.Drawing.Point(314, 262);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(244, 84);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sizes";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 52);
+            this.label12.Location = new System.Drawing.Point(15, 139);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 13);
             this.label12.TabIndex = 33;
@@ -332,7 +317,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 16);
+            this.label11.Location = new System.Drawing.Point(12, 112);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 13);
             this.label11.TabIndex = 32;
@@ -340,7 +325,7 @@
             // 
             // txtBxAfter
             // 
-            this.txtBxAfter.Location = new System.Drawing.Point(68, 52);
+            this.txtBxAfter.Location = new System.Drawing.Point(74, 139);
             this.txtBxAfter.Name = "txtBxAfter";
             this.txtBxAfter.Size = new System.Drawing.Size(144, 20);
             this.txtBxAfter.TabIndex = 31;
@@ -348,7 +333,7 @@
             // 
             // txtBxBefore
             // 
-            this.txtBxBefore.Location = new System.Drawing.Point(68, 13);
+            this.txtBxBefore.Location = new System.Drawing.Point(74, 109);
             this.txtBxBefore.Name = "txtBxBefore";
             this.txtBxBefore.Size = new System.Drawing.Size(144, 20);
             this.txtBxBefore.TabIndex = 30;
@@ -360,23 +345,27 @@
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOutput.Size = new System.Drawing.Size(387, 215);
+            this.txtOutput.Size = new System.Drawing.Size(231, 80);
             this.txtOutput.TabIndex = 8;
             this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
             // 
             // grpBxDisplay
             // 
+            this.grpBxDisplay.Controls.Add(this.label12);
             this.grpBxDisplay.Controls.Add(this.txtOutput);
+            this.grpBxDisplay.Controls.Add(this.txtBxAfter);
+            this.grpBxDisplay.Controls.Add(this.label11);
+            this.grpBxDisplay.Controls.Add(this.txtBxBefore);
             this.grpBxDisplay.Location = new System.Drawing.Point(315, 13);
             this.grpBxDisplay.Name = "grpBxDisplay";
-            this.grpBxDisplay.Size = new System.Drawing.Size(399, 243);
+            this.grpBxDisplay.Size = new System.Drawing.Size(243, 169);
             this.grpBxDisplay.TabIndex = 9;
             this.grpBxDisplay.TabStop = false;
-            this.grpBxDisplay.Text = "Display";
+            this.grpBxDisplay.Text = "Results";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(579, 275);
+            this.btnClose.Location = new System.Drawing.Point(389, 197);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 23);
             this.btnClose.TabIndex = 10;
@@ -388,10 +377,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 350);
+            this.ClientSize = new System.Drawing.Size(566, 350);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpBxDisplay);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpBxFiles);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -400,8 +388,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpBxFiles.ResumeLayout(false);
             this.grpBxFiles.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.grpBxDisplay.ResumeLayout(false);
             this.grpBxDisplay.PerformLayout();
             this.ResumeLayout(false);
@@ -435,7 +421,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtBxAfter;

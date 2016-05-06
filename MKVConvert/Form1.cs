@@ -25,6 +25,9 @@ namespace MKVConvert
         {
             string[] files = Directory.GetFiles(txtBxSource.Text, "*.*");
 
+            int converted = 0;
+            int errors = 0;
+
             foreach (string currentFile in files)
             {
                 if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("mkv") || currentFile.EndsWith("ts"))
@@ -72,6 +75,16 @@ namespace MKVConvert
                         {
                             Thread.Sleep(500);
                         }
+
+                        switch (prc.ExitCode)
+                        {
+                            case 0:
+                                converted++;
+                                break;
+                            default:
+                                errors++;
+                                break;
+                        }
                         
                         // Sort file out
                         if (File.Exists(currentFile + "-output.mkv"))
@@ -91,13 +104,16 @@ namespace MKVConvert
                         long afterSize = sizes(afterDir);
 
                         txtBxAfter.Text = InGB(afterSize);
-
-                        //MessageBox.Show("Job completed");
                     }
                     catch
                     { }
                 }
             }
+
+            txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
+            txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
+            txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
+            //MessageBox.Show("Job completed");
         }
 
         private void btnHD_Click(object sender, EventArgs e)
