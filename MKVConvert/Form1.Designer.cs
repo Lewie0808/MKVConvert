@@ -384,7 +384,7 @@
             // 
             // arrowDown
             // 
-            this.arrowDown.Image = global::MKVConvert.Properties.Resources.down1;
+            this.arrowDown.Image = global::MKVConvert.Properties.Resources.down;
             this.arrowDown.InitialImage = null;
             this.arrowDown.Location = new System.Drawing.Point(133, 135);
             this.arrowDown.Name = "arrowDown";
@@ -395,7 +395,7 @@
             // 
             // sameAs
             // 
-            this.sameAs.Image = global::MKVConvert.Properties.Resources.Same1;
+            this.sameAs.Image = global::MKVConvert.Properties.Resources.Same;
             this.sameAs.InitialImage = null;
             this.sameAs.Location = new System.Drawing.Point(133, 135);
             this.sameAs.Name = "sameAs";
@@ -406,7 +406,7 @@
             // 
             // arrowUp
             // 
-            this.arrowUp.Image = global::MKVConvert.Properties.Resources.up1;
+            this.arrowUp.Image = global::MKVConvert.Properties.Resources.up;
             this.arrowUp.InitialImage = null;
             this.arrowUp.Location = new System.Drawing.Point(133, 135);
             this.arrowUp.Name = "arrowUp";
