@@ -117,8 +117,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="convert.ico" />
-    <EmbeddedResource Include="Resources\equals.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <EmbeddedResource Include="Resources\same.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\down.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

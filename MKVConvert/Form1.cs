@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -16,7 +18,14 @@ namespace MKVConvert
 
         private void btnSD_Click(object sender, EventArgs e)
         {
-            encodeSD();
+            if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
+            {
+                encodeSD();
+            }
+            else
+            {
+                MessageBox.Show("Please install Handbrake before running");
+            } 
         }
 
         public void encodeSD(bool copyAudio = true)
@@ -95,7 +104,7 @@ namespace MKVConvert
                 arrowUp.Image = Properties.Resources.up;
             }
             
-            if (afterSizeSD > beforeSizeSD == false)
+            if (afterSizeSD < beforeSizeSD == true)
             {
                 arrowDown.Image = Properties.Resources.down;
             }
@@ -115,7 +124,14 @@ namespace MKVConvert
 
         private void btnHD_Click(object sender, EventArgs e)
         {
-            encodeHD();
+            if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
+            {
+                encodeHD();
+            }
+            else
+            {
+                MessageBox.Show("Please install Handbrake before running");
+            }
         }
         public void encodeHD(bool copyAudio = true)
         {
@@ -197,7 +213,14 @@ namespace MKVConvert
 
         private void btnHD2HD_Click(object sender, EventArgs e)
         {
-            encodeHD2HD();
+            if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
+            {
+                encodeHD2HD();
+            }
+            else
+            {
+                MessageBox.Show("Please install Handbrake before running");
+            }
         }
 
         public void encodeHD2HD()
@@ -345,7 +368,6 @@ namespace MKVConvert
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-            
         }
 
         private void txtOutput_TextChanged(object sender, EventArgs e)
