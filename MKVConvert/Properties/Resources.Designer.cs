@@ -73,9 +73,9 @@ namespace MKVConvert.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap same {
+        internal static System.Drawing.Bitmap Same {
             get {
-                object obj = ResourceManager.GetObject("same", resourceCulture);
+                object obj = ResourceManager.GetObject("Same", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

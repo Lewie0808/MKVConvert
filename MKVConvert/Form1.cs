@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -104,22 +105,24 @@ namespace MKVConvert
                 arrowUp.Image = Properties.Resources.up;
             }
             
-            if (afterSizeSD < beforeSizeSD == true)
-            {
-                arrowDown.Image = Properties.Resources.down;
-            }
+                if (afterSizeSD < beforeSizeSD == true)
+                {
+                    arrowDown.Image = Properties.Resources.down;
+                arrowDown.Visible = true;   
+                }
 
-            else
-            {
-                sameAs.Image = Properties.Resources.same;
-            }
+                else
+                {
+                    sameAs.Image = Properties.Resources.Same;
+                }
 
             txtBxAfter.Text = InGB(afterSizeSD);
 
             txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
-            //MessageBox.Show("Job completed");
+
+            MessageBox.Show("Job completed");
         }
 
         private void btnHD_Click(object sender, EventArgs e)
@@ -208,7 +211,8 @@ namespace MKVConvert
             txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
-            //MessageBox.Show("Job completed");
+
+            MessageBox.Show("Job completed");
         }
 
         private void btnHD2HD_Click(object sender, EventArgs e)
@@ -302,7 +306,8 @@ namespace MKVConvert
             txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
-            //MessageBox.Show("Job completed");
+
+            MessageBox.Show("Job completed");
         }
 
         public void prc_OutputDataReceived(object sender, DataReceivedEventArgs e)
@@ -374,6 +379,12 @@ namespace MKVConvert
         {
             txtOutput.SelectionStart = txtOutput.Text.Length;
             txtOutput.ScrollToCaret();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            arrowDown.Image = Properties.Resources.down;
+            
         }
     }
 }

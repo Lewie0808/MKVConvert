@@ -61,14 +61,15 @@
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.grpBxDisplay = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.sameAs = new System.Windows.Forms.PictureBox();
             this.arrowUp = new System.Windows.Forms.PictureBox();
             this.arrowDown = new System.Windows.Forms.PictureBox();
-            this.sameAs = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.grpBxFiles.SuspendLayout();
             this.grpBxDisplay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sameAs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sameAs)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSD
@@ -382,6 +383,15 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // sameAs
+            // 
+            this.sameAs.InitialImage = null;
+            this.sameAs.Location = new System.Drawing.Point(133, 135);
+            this.sameAs.Name = "sameAs";
+            this.sameAs.Size = new System.Drawing.Size(23, 21);
+            this.sameAs.TabIndex = 36;
+            this.sameAs.TabStop = false;
+            // 
             // arrowUp
             // 
             this.arrowUp.InitialImage = null;
@@ -400,20 +410,22 @@
             this.arrowDown.TabIndex = 34;
             this.arrowDown.TabStop = false;
             // 
-            // sameAs
+            // button1
             // 
-            this.sameAs.InitialImage = null;
-            this.sameAs.Location = new System.Drawing.Point(133, 135);
-            this.sameAs.Name = "sameAs";
-            this.sameAs.Size = new System.Drawing.Size(23, 21);
-            this.sameAs.TabIndex = 36;
-            this.sameAs.TabStop = false;
+            this.button1.Location = new System.Drawing.Point(369, 282);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 350);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpBxDisplay);
             this.Controls.Add(this.grpBxFiles);
@@ -426,9 +438,9 @@
             this.grpBxFiles.PerformLayout();
             this.grpBxDisplay.ResumeLayout(false);
             this.grpBxDisplay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sameAs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sameAs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,6 +482,7 @@
         private System.Windows.Forms.PictureBox arrowUp;
         private System.Windows.Forms.PictureBox arrowDown;
         private System.Windows.Forms.PictureBox sameAs;
+        private System.Windows.Forms.Button button1;
     }
 }
 
