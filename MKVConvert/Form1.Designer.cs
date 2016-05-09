@@ -61,8 +61,14 @@
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.grpBxDisplay = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.arrowUp = new System.Windows.Forms.PictureBox();
+            this.arrowDown = new System.Windows.Forms.PictureBox();
+            this.sameAs = new System.Windows.Forms.PictureBox();
             this.grpBxFiles.SuspendLayout();
             this.grpBxDisplay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sameAs)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSD
@@ -308,7 +314,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 139);
+            this.label12.Location = new System.Drawing.Point(15, 162);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 13);
             this.label12.TabIndex = 33;
@@ -325,7 +331,7 @@
             // 
             // txtBxAfter
             // 
-            this.txtBxAfter.Location = new System.Drawing.Point(74, 139);
+            this.txtBxAfter.Location = new System.Drawing.Point(74, 162);
             this.txtBxAfter.Name = "txtBxAfter";
             this.txtBxAfter.Size = new System.Drawing.Size(144, 20);
             this.txtBxAfter.TabIndex = 31;
@@ -351,6 +357,9 @@
             // 
             // grpBxDisplay
             // 
+            this.grpBxDisplay.Controls.Add(this.sameAs);
+            this.grpBxDisplay.Controls.Add(this.arrowUp);
+            this.grpBxDisplay.Controls.Add(this.arrowDown);
             this.grpBxDisplay.Controls.Add(this.label12);
             this.grpBxDisplay.Controls.Add(this.txtOutput);
             this.grpBxDisplay.Controls.Add(this.txtBxAfter);
@@ -358,20 +367,47 @@
             this.grpBxDisplay.Controls.Add(this.txtBxBefore);
             this.grpBxDisplay.Location = new System.Drawing.Point(315, 13);
             this.grpBxDisplay.Name = "grpBxDisplay";
-            this.grpBxDisplay.Size = new System.Drawing.Size(243, 169);
+            this.grpBxDisplay.Size = new System.Drawing.Size(243, 192);
             this.grpBxDisplay.TabIndex = 9;
             this.grpBxDisplay.TabStop = false;
             this.grpBxDisplay.Text = "Results";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(389, 197);
+            this.btnClose.Location = new System.Drawing.Point(389, 229);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 23);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // arrowUp
+            // 
+            this.arrowUp.InitialImage = null;
+            this.arrowUp.Location = new System.Drawing.Point(74, 135);
+            this.arrowUp.Name = "arrowUp";
+            this.arrowUp.Size = new System.Drawing.Size(23, 21);
+            this.arrowUp.TabIndex = 35;
+            this.arrowUp.TabStop = false;
+            // 
+            // arrowDown
+            // 
+            this.arrowDown.InitialImage = null;
+            this.arrowDown.Location = new System.Drawing.Point(195, 135);
+            this.arrowDown.Name = "arrowDown";
+            this.arrowDown.Size = new System.Drawing.Size(23, 21);
+            this.arrowDown.TabIndex = 34;
+            this.arrowDown.TabStop = false;
+            // 
+            // sameAs
+            // 
+            this.sameAs.InitialImage = null;
+            this.sameAs.Location = new System.Drawing.Point(133, 135);
+            this.sameAs.Name = "sameAs";
+            this.sameAs.Size = new System.Drawing.Size(23, 21);
+            this.sameAs.TabIndex = 36;
+            this.sameAs.TabStop = false;
             // 
             // Form1
             // 
@@ -390,6 +426,9 @@
             this.grpBxFiles.PerformLayout();
             this.grpBxDisplay.ResumeLayout(false);
             this.grpBxDisplay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sameAs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,6 +467,9 @@
         private System.Windows.Forms.TextBox txtOutput;
         private System.Windows.Forms.GroupBox grpBxDisplay;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.PictureBox arrowUp;
+        private System.Windows.Forms.PictureBox arrowDown;
+        private System.Windows.Forms.PictureBox sameAs;
     }
 }
 

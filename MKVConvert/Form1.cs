@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using System.Text;
 
 namespace MKVConvert
 {
@@ -23,6 +21,9 @@ namespace MKVConvert
 
         public void encodeSD(bool copyAudio = true)
         {
+            string[] beforeDirSD = Directory.GetFiles(txtBxSource.Text, "*.*");
+            long beforeSizeSD = sizes(beforeDirSD);
+
             string[] files = Directory.GetFiles(txtBxSource.Text, "*.*");
 
             int converted = 0;
@@ -49,28 +50,9 @@ namespace MKVConvert
                         // Create process based on settings
                         Process prc = new Process();
                         prc.StartInfo = psi;
-
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        //prc.StartInfo.CreateNoWindow = true;
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        //prc.StartInfo.RedirectStandardOutput = true;
-                        //prc.StartInfo.UseShellExecute = false;
-                        //prc.StartInfo.CreateNoWindow = true;
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        //prc.OutputDataReceived += new DataReceivedEventHandler(prc_OutputDataReceived);
-
                         prc.Start();
 
-                        //prc.BeginOutputReadLine();
-                        //prc.StandardOutput.ReadLine();
-
-                        //prc.WaitForExit();
-                        //prc.Close();
-
-                        //string output = prc.StandardOutput.ReadToEnd();
-
                         // Wait for process to exit
-
                         while (!prc.HasExited)
                         {
                             Thread.Sleep(500);
@@ -99,16 +81,31 @@ namespace MKVConvert
 
                             File.Move(currentFile + "-output.mkv", finalName);
                         }
-
-                        string[] afterDir = Directory.GetFiles(txtBxSource.Text, "*.*");
-                        long afterSize = sizes(afterDir);
-
-                        txtBxAfter.Text = InGB(afterSize);
                     }
                     catch
                     { }
                 }
             }
+
+            string[] afterDirSD = Directory.GetFiles(txtBxSource.Text, "*.*");
+            long afterSizeSD = sizes(afterDirSD);
+
+            if (afterSizeSD > beforeSizeSD == true)
+            {
+                arrowUp.Image = Properties.Resources.up;
+            }
+            
+            if (afterSizeSD > beforeSizeSD == false)
+            {
+                arrowDown.Image = Properties.Resources.down;
+            }
+
+            else
+            {
+                sameAs.Image = Properties.Resources.same;
+            }
+
+            txtBxAfter.Text = InGB(afterSizeSD);
 
             txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
@@ -122,6 +119,9 @@ namespace MKVConvert
         }
         public void encodeHD(bool copyAudio = true)
         {
+            int converted = 0;
+            int errors = 0;
+
             string[] files = Directory.GetFiles(txtBxSource.Text, "*.*");
 
             foreach (string currentFile in files)
@@ -145,29 +145,22 @@ namespace MKVConvert
                         // Create process based on settings
                         Process prc = new Process();
                         prc.StartInfo = psi;
-
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        //prc.Start();
-
-                        //prc.StartInfo.CreateNoWindow = true;
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        //prc.StartInfo.RedirectStandardOutput = true;
-                        //prc.StartInfo.UseShellExecute = false;
-                        //prc.OutputDataReceived += new DataReceivedEventHandler(prc_OutputDataReceived);
                         prc.Start();
-
-                        //prc.BeginOutputReadLine();
-
-                        //prc.StartInfo.CreateNoWindow = true;
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
-                        //prc.StandardOutput.ReadLine();
-                        //prc.StandardOutput.ReadToEnd();
 
                         // Wait for process to exit
                         while (!prc.HasExited)
                         {
                             Thread.Sleep(500);
+                        }
+
+                        switch (prc.ExitCode)
+                        {
+                            case 0:
+                                converted++;
+                                break;
+                            default:
+                                errors++;
+                                break;
                         }
 
                         // Sort file out
@@ -183,19 +176,23 @@ namespace MKVConvert
 
                             File.Move(currentFile + "-output.mkv", finalName);
                         }
-                        string[] afterDir = Directory.GetFiles(txtBxSource.Text, "*.*");
-                        long afterSize = sizes(afterDir);
-
-                        txtBxAfter.Text = InGB(afterSize);
-
-                        //MessageBox.Show("Job completed");
+                        string[] afterDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
+                        long afterSizeHD = sizes(afterDirHD);
                     }
-
                     catch
-                    {
-                    }
+                    { }
                 }
             }
+
+            string[] afterDir = Directory.GetFiles(txtBxSource.Text, "*.*");
+            long afterSize = sizes(afterDir);
+
+            txtBxAfter.Text = InGB(afterSize);
+
+            txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
+            txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
+            txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
+            //MessageBox.Show("Job completed");
         }
 
         private void btnHD2HD_Click(object sender, EventArgs e)
@@ -205,6 +202,10 @@ namespace MKVConvert
 
         public void encodeHD2HD()
         {
+
+            int converted = 0;
+            int errors = 0;
+
             bool copyAudio = true;
 
             string[] files = Directory.GetFiles(txtBxSource.Text, "*.*");
@@ -231,28 +232,22 @@ namespace MKVConvert
                         Process prc = new Process();
                         prc.StartInfo = psi;
 
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        //prc.Start();
-
-                        //prc.StartInfo.CreateNoWindow = true;
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        //prc.StartInfo.RedirectStandardOutput = true;
-                        //prc.StartInfo.UseShellExecute = false;
-                        //prc.OutputDataReceived += new DataReceivedEventHandler(prc_OutputDataReceived);
                         prc.Start();
-
-                        //prc.BeginOutputReadLine();
-
-                        //prc.StartInfo.CreateNoWindow = true;
-                        //prc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
-                        //prc.StandardOutput.ReadLine();
-                        //prc.StandardOutput.ReadToEnd();
 
                         // Wait for process to exit
                         while (!prc.HasExited)
                         {
                             Thread.Sleep(500);
+                        }
+
+                        switch (prc.ExitCode)
+                        {
+                            case 0:
+                                converted++;
+                                break;
+                            default:
+                                errors++;
+                                break;
                         }
 
                         // Sort file out
@@ -270,17 +265,21 @@ namespace MKVConvert
                         }
                         string[] afterDir = Directory.GetFiles(txtBxSource.Text, "*.*");
                         long afterSize = sizes(afterDir);
-
-                        txtBxAfter.Text = InGB(afterSize);
-
-                        MessageBox.Show("Job completed");
                     }
-
                     catch
-                    {
-                    }
+                    { }
                 }
             }
+
+            string[] afterDirHD2HD = Directory.GetFiles(txtBxSource.Text, "*.*");
+            long afterSizeHD2HD = sizes(afterDirHD2HD);
+
+            txtBxAfter.Text = InGB(afterSizeHD2HD);
+
+            txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
+            txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
+            txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
+            //MessageBox.Show("Job completed");
         }
 
         public void prc_OutputDataReceived(object sender, DataReceivedEventArgs e)
