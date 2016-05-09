@@ -103,17 +103,21 @@ namespace MKVConvert
             if (afterSizeSD > beforeSizeSD == true)
             {
                 arrowUp.Image = Properties.Resources.up;
+                arrowUp.Visible = true;
+                
             }
             
                 if (afterSizeSD < beforeSizeSD == true)
                 {
                     arrowDown.Image = Properties.Resources.down;
-                arrowDown.Visible = true;   
+                    arrowDown.Visible = true;
                 }
 
                 else
                 {
                     sameAs.Image = Properties.Resources.Same;
+                    sameAs.Visible = true;
+               
                 }
 
             txtBxAfter.Text = InGB(afterSizeSD);
@@ -383,7 +387,6 @@ namespace MKVConvert
 
         private void button1_Click(object sender, EventArgs e)
         {
-            arrowDown.Image = Properties.Resources.down;
             
         }
     }
