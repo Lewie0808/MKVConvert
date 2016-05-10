@@ -28,7 +28,7 @@ namespace MKVConvert
                 DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start("http://handbrake.fr/rotation.php?file=HandBrake-0.10.5-x86_64-Win_GUI-1.exe");
+                    System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -150,7 +150,7 @@ namespace MKVConvert
                 DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start("http://handbrake.fr/rotation.php?file=HandBrake-0.10.5-x86_64-Win_GUI-1.exe");
+                    System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -271,7 +271,7 @@ namespace MKVConvert
                 DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start("http://handbrake.fr/rotation.php?file=HandBrake-0.10.5-x86_64-Win_GUI-1.exe");
+                    System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
