@@ -142,6 +142,9 @@ namespace MKVConvert
         }
         public void encodeHD(bool copyAudio = true)
         {
+            string[] beforeDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
+            long beforeSizeHD = sizes(beforeDirHD);
+
             int converted = 0;
             int errors = 0;
 
@@ -199,18 +202,36 @@ namespace MKVConvert
 
                             File.Move(currentFile + "-output.mkv", finalName);
                         }
-                        string[] afterDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                        long afterSizeHD = sizes(afterDirHD);
                     }
                     catch
                     { }
                 }
             }
 
-            string[] afterDir = Directory.GetFiles(txtBxSource.Text, "*.*");
-            long afterSize = sizes(afterDir);
+            string[] afterDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
+            long afterSizeHD = sizes(afterDirHD);
 
-            txtBxAfter.Text = InGB(afterSize);
+            if (afterSizeHD > beforeSizeHD == true)
+            {
+                arrowUp.Image = Properties.Resources.up;
+                arrowUp.Visible = true;
+
+            }
+
+            if (afterSizeHD < beforeSizeHD == true)
+            {
+                arrowDown.Image = Properties.Resources.down;
+                arrowDown.Visible = true;
+            }
+
+            else
+            {
+                sameAs.Image = Properties.Resources.Same;
+                sameAs.Visible = true;
+
+            }
+
+            txtBxAfter.Text = InGB(afterSizeHD);
 
             txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
@@ -233,6 +254,8 @@ namespace MKVConvert
 
         public void encodeHD2HD()
         {
+            string[] beforeDirHD2HD = Directory.GetFiles(txtBxSource.Text, "*.*");
+            long beforeSizeHD2HD = sizes(beforeDirHD2HD);
 
             int converted = 0;
             int errors = 0;
@@ -294,8 +317,6 @@ namespace MKVConvert
 
                             File.Move(currentFile + "-output.mkv", finalName);
                         }
-                        string[] afterDir = Directory.GetFiles(txtBxSource.Text, "*.*");
-                        long afterSize = sizes(afterDir);
                     }
                     catch
                     { }
@@ -304,6 +325,26 @@ namespace MKVConvert
 
             string[] afterDirHD2HD = Directory.GetFiles(txtBxSource.Text, "*.*");
             long afterSizeHD2HD = sizes(afterDirHD2HD);
+
+            if (afterSizeHD2HD > beforeSizeHD2HD == true)
+            {
+                arrowUp.Image = Properties.Resources.up;
+                arrowUp.Visible = true;
+
+            }
+
+            if (afterSizeHD2HD < beforeSizeHD2HD == true)
+            {
+                arrowDown.Image = Properties.Resources.down;
+                arrowDown.Visible = true;
+            }
+
+            else
+            {
+                sameAs.Image = Properties.Resources.Same;
+                sameAs.Visible = true;
+
+            }
 
             txtBxAfter.Text = InGB(afterSizeHD2HD);
 
@@ -383,11 +424,6 @@ namespace MKVConvert
         {
             txtOutput.SelectionStart = txtOutput.Text.Length;
             txtOutput.ScrollToCaret();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
