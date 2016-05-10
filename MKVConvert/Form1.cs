@@ -25,7 +25,7 @@ namespace MKVConvert
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
@@ -147,7 +147,7 @@ namespace MKVConvert
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
@@ -268,7 +268,7 @@ namespace MKVConvert
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
