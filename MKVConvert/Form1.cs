@@ -25,7 +25,17 @@ namespace MKVConvert
             }
             else
             {
-                MessageBox.Show("Please install Handbrake before running");
+                DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("http://handbrake.fr/rotation.php?file=HandBrake-0.10.5-x86_64-Win_GUI-1.exe");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Please install Handbrake before running");
+
+                    this.Close();
+                }
             } 
         }
 
@@ -137,7 +147,17 @@ namespace MKVConvert
             }
             else
             {
-                MessageBox.Show("Please install Handbrake before running");
+                DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("http://handbrake.fr/rotation.php?file=HandBrake-0.10.5-x86_64-Win_GUI-1.exe");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Please install Handbrake before running");
+
+                    this.Close();
+                }
             }
         }
         public void encodeHD(bool copyAudio = true)
@@ -248,7 +268,17 @@ namespace MKVConvert
             }
             else
             {
-                MessageBox.Show("Please install Handbrake before running");
+                DialogResult dialogResult = MessageBox.Show("Do you want to install Handbreak", "Handbreak installation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("http://handbrake.fr/rotation.php?file=HandBrake-0.10.5-x86_64-Win_GUI-1.exe");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Please install Handbrake before running");
+
+                    this.Close();
+                }
             }
         }
 
