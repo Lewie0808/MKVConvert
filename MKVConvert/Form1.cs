@@ -21,10 +21,12 @@ namespace MKVConvert
         {
             if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
             {
+                btnSD.BackColor = Color.Green;
                 encodeSD();
             }
             else
             {
+
                 DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -143,10 +145,12 @@ namespace MKVConvert
         {
             if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
             {
+                btnHD.BackColor = Color.Green;
                 encodeHD();
             }
             else
             {
+
                 DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -264,10 +268,12 @@ namespace MKVConvert
         {
             if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
             {
+                btnHD2HD.BackColor = Color.Green;
                 encodeHD2HD();
             }
             else
             {
+
                 DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -428,7 +434,9 @@ namespace MKVConvert
 
         private void btnSourceBrow_Click(object sender, EventArgs e)
         {
-
+            btnSD.BackColor = default(Color);
+            btnHD.BackColor = default(Color);
+            btnHD2HD.BackColor = default(Color);
 
             string folderPath = "";
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
