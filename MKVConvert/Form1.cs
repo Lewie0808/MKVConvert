@@ -55,6 +55,8 @@ namespace MKVConvert
             {
                 if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("mkv") || currentFile.EndsWith("ts"))
                 {
+                    //Console.SetWindowPosition(400, 400);
+                    
                     // Create launch settings
                     ProcessStartInfo psi = new ProcessStartInfo();
                     psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
@@ -438,6 +440,10 @@ namespace MKVConvert
             btnHD.BackColor = default(Color);
             btnHD2HD.BackColor = default(Color);
 
+            arrowUp.Visible = false;
+            arrowDown.Visible = false;
+            sameAs.Visible = false;
+
             string folderPath = "";
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
@@ -451,6 +457,8 @@ namespace MKVConvert
             txtBxBefore.Text = InGB(beforeSize);
 
             txtBxAfter.Clear();
+            //txtBxBefore.Clear();
+            txtOutput.Clear();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
