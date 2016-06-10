@@ -60,15 +60,15 @@
             this.txtBxBefore = new System.Windows.Forms.TextBox();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.grpBxDisplay = new System.Windows.Forms.GroupBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.arrowDown = new System.Windows.Forms.PictureBox();
             this.sameAs = new System.Windows.Forms.PictureBox();
             this.arrowUp = new System.Windows.Forms.PictureBox();
+            this.arrowDown = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.grpBxFiles.SuspendLayout();
             this.grpBxDisplay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sameAs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSD
@@ -217,7 +217,7 @@
             this.txtBxHD2HDBR.Name = "txtBxHD2HDBR";
             this.txtBxHD2HDBR.Size = new System.Drawing.Size(69, 20);
             this.txtBxHD2HDBR.TabIndex = 17;
-            this.txtBxHD2HDBR.Text = "512";
+            this.txtBxHD2HDBR.Text = "2048";
             // 
             // txtBxHD2HDHei
             // 
@@ -241,7 +241,7 @@
             this.txtBxHDBR.Name = "txtBxHDBR";
             this.txtBxHDBR.Size = new System.Drawing.Size(69, 20);
             this.txtBxHDBR.TabIndex = 14;
-            this.txtBxHDBR.Text = "512";
+            this.txtBxHDBR.Text = "2048";
             // 
             // txtBxHDHei
             // 
@@ -372,27 +372,6 @@
             this.grpBxDisplay.TabStop = false;
             this.grpBxDisplay.Text = "Results";
             // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(389, 229);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(135, 23);
-            this.btnClose.TabIndex = 10;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // arrowDown
-            // 
-            this.arrowDown.Image = global::MKVConvert.Properties.Resources.down;
-            this.arrowDown.InitialImage = null;
-            this.arrowDown.Location = new System.Drawing.Point(133, 135);
-            this.arrowDown.Name = "arrowDown";
-            this.arrowDown.Size = new System.Drawing.Size(23, 24);
-            this.arrowDown.TabIndex = 34;
-            this.arrowDown.TabStop = false;
-            this.arrowDown.Visible = false;
-            // 
             // sameAs
             // 
             this.sameAs.Image = global::MKVConvert.Properties.Resources.Same;
@@ -415,6 +394,27 @@
             this.arrowUp.TabStop = false;
             this.arrowUp.Visible = false;
             // 
+            // arrowDown
+            // 
+            this.arrowDown.Image = global::MKVConvert.Properties.Resources.down;
+            this.arrowDown.InitialImage = null;
+            this.arrowDown.Location = new System.Drawing.Point(133, 135);
+            this.arrowDown.Name = "arrowDown";
+            this.arrowDown.Size = new System.Drawing.Size(23, 24);
+            this.arrowDown.TabIndex = 34;
+            this.arrowDown.TabStop = false;
+            this.arrowDown.Visible = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(389, 229);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(135, 23);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,9 +432,9 @@
             this.grpBxFiles.PerformLayout();
             this.grpBxDisplay.ResumeLayout(false);
             this.grpBxDisplay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sameAs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).EndInit();
             this.ResumeLayout(false);
 
         }
