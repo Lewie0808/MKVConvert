@@ -50,66 +50,65 @@ namespace MKVConvert
 
             int converted = 0;
             int errors = 0;
-
-            foreach (string currentFile in files)
-            {
-                if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("mkv") || currentFile.EndsWith("ts"))
+          
+                foreach (string currentFile in files)
                 {
-                    //Console.SetWindowPosition(400, 400);
-                    
-                    // Create launch settings
-                    ProcessStartInfo psi = new ProcessStartInfo();
-                    psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
-                    if (copyAudio)
+                    if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("ts"))
                     {
-                        psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxSDWid.Text + " -l " + txtBxSDHei.Text + " --modulus 8 -e x264 -b " + txtBxSDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
-                    }
-                    else
-                    {
-                        //psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + width + " -l " + height + " --modulus 8 -e x264 -b " + bitrate + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
-                    }
 
-                    try
-                    {
-                        // Create process based on settings
-                        Process prc = new Process();
-                        prc.StartInfo = psi;
-                        prc.Start();
-
-                        // Wait for process to exit
-                        while (!prc.HasExited)
+                        // Create launch settings
+                        ProcessStartInfo psi = new ProcessStartInfo();
+                        psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
+                        if (copyAudio)
                         {
-                            Thread.Sleep(500);
+                            psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxSDWid.Text + " -l " + txtBxSDHei.Text + " --modulus 8 -e x264 -b " + txtBxSDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
+                        }
+                        else
+                        {
+                            //psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + width + " -l " + height + " --modulus 8 -e x264 -b " + bitrate + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
                         }
 
-                        switch (prc.ExitCode)
+                        try
                         {
-                            case 0:
-                                converted++;
-                                break;
-                            default:
-                                errors++;
-                                break;
-                        }
-                        
-                        // Sort file out
-                        if (File.Exists(currentFile + "-output.mkv"))
-                        {
-                            File.Delete(currentFile);
+                            // Create process based on settings
+                            Process prc = new Process();
+                            prc.StartInfo = psi;
+                            prc.Start();
 
-                            string finalName = string.Empty;
-                            if (currentFile.EndsWith("ts"))
-                                finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2), "mkv");
-                            else
-                                finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3), "mkv");
+                            // Wait for process to exit
+                            while (!prc.HasExited)
+                            {
+                                Thread.Sleep(500);
+                            }
 
-                            File.Move(currentFile + "-output.mkv", finalName);
+                            switch (prc.ExitCode)
+                            {
+                                case 0:
+                                    converted++;
+                                    break;
+                                default:
+                                    errors++;
+                                    break;
+                            }
+
+                            // Sort file out
+                            if (File.Exists(currentFile + "-output.mkv"))
+                            {
+                                File.Delete(currentFile);
+
+                                string finalName = string.Empty;
+                                if (currentFile.EndsWith("ts"))
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2), "mkv");
+                                else
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3), "mkv");
+
+                                File.Move(currentFile + "-output.mkv", finalName);
+                            }
                         }
+                        catch
+                        { }
                     }
-                    catch
-                    { }
                 }
-            }
 
             string[] afterDirSD = Directory.GetFiles(txtBxSource.Text, "*.*");
             long afterSizeSD = sizes(afterDirSD);
@@ -139,6 +138,7 @@ namespace MKVConvert
             txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
             txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
+            txtOutput.Text = txtOutput.Text + "MKVs: " +
 
             MessageBox.Show("Job completed");
         }
@@ -178,7 +178,7 @@ namespace MKVConvert
 
             foreach (string currentFile in files)
             {
-                if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("mkv") || currentFile.EndsWith("ts"))
+                if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("ts"))
                 {
                     // Create launch settings
                     ProcessStartInfo psi = new ProcessStartInfo();
@@ -304,7 +304,7 @@ namespace MKVConvert
 
             foreach (string currentFile in files)
             {
-                if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("mkv") || currentFile.EndsWith("ts"))
+                if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("ts"))
                 {
                     // Create launch settings
                     ProcessStartInfo psi = new ProcessStartInfo();
@@ -471,5 +471,6 @@ namespace MKVConvert
             txtOutput.SelectionStart = txtOutput.Text.Length;
             txtOutput.ScrollToCaret();
         }
+              
     }
 }

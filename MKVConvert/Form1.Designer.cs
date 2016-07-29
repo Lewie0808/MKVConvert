@@ -64,11 +64,14 @@
             this.arrowUp = new System.Windows.Forms.PictureBox();
             this.arrowDown = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.ChkBxMKV = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grpBxFiles.SuspendLayout();
             this.grpBxDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sameAs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSD
@@ -407,19 +410,41 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(389, 229);
+            this.btnClose.Location = new System.Drawing.Point(389, 259);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(135, 23);
+            this.btnClose.Size = new System.Drawing.Size(105, 23);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // ChkBxMKV
+            // 
+            this.ChkBxMKV.AutoSize = true;
+            this.ChkBxMKV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ChkBxMKV.Location = new System.Drawing.Point(6, 19);
+            this.ChkBxMKV.Name = "ChkBxMKV";
+            this.ChkBxMKV.Size = new System.Drawing.Size(106, 17);
+            this.ChkBxMKV.TabIndex = 11;
+            this.ChkBxMKV.Text = "Include MKV files";
+            this.ChkBxMKV.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ChkBxMKV);
+            this.groupBox1.Location = new System.Drawing.Point(315, 211);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(243, 42);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "MKV Files";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 357);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpBxDisplay);
             this.Controls.Add(this.grpBxFiles);
@@ -435,6 +460,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sameAs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -476,6 +503,8 @@
         private System.Windows.Forms.PictureBox arrowUp;
         private System.Windows.Forms.PictureBox arrowDown;
         private System.Windows.Forms.PictureBox sameAs;
+        private System.Windows.Forms.CheckBox ChkBxMKV;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
