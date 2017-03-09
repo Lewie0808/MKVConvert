@@ -248,7 +248,6 @@ namespace MKVConvert
 
                 MessageBox.Show(message.ToString());
 
-
             }
         }
 
@@ -375,11 +374,12 @@ namespace MKVConvert
 
                 txtBxAfter.Text = InGB(afterSizeHD);
 
-                txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
+                var message = new StringBuilder();
+                message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
 
-                MessageBox.Show("Job completed");
+                MessageBox.Show(message.ToString());
             }
 
             else
@@ -471,11 +471,12 @@ namespace MKVConvert
 
                 txtBxAfter.Text = InGB(afterSizeHD);
 
-                txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
+                var message = new StringBuilder();
+                message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
 
-                MessageBox.Show("Job completed");
+                MessageBox.Show(message.ToString());
             }
            
         }
@@ -605,11 +606,12 @@ namespace MKVConvert
 
                 txtBxAfter.Text = InGB(afterSizeHD2HD);
 
-                txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
+                var message = new StringBuilder();
+                message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
 
-                MessageBox.Show("Job completed");
+                MessageBox.Show(message.ToString());
             }
 
             else
@@ -701,11 +703,12 @@ namespace MKVConvert
 
                 txtBxAfter.Text = InGB(afterSizeHD2HD);
 
-                txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
-
-                MessageBox.Show("Job completed");
+                var message = new StringBuilder();
+                message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
+                
+                MessageBox.Show(message.ToString());
             }
         }
 
