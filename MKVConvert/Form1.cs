@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -682,16 +683,6 @@ namespace MKVConvert
             }
         }
 
-        public void prc_OutputDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            if (e.Data != null)
-            {
-                string newLine = e.Data.Trim() + Environment.NewLine;
-                MethodInvoker append = () => txtOutput.Text += newLine;
-                txtOutput.BeginInvoke(append);
-            }
-        }
-
         private static long sizes(string[] path)
         {
             long temp = 0;
@@ -745,8 +736,10 @@ namespace MKVConvert
 
             txtBxBefore.Text = InGB(beforeSize);
 
+            var fileCount = Directory.EnumerateFiles(txtBxSource.Text, "*", SearchOption.AllDirectories).Count();
+            txtBxFileCount.Text = fileCount.ToString();
+
             txtBxAfter.Clear();
-            //txtBxBefore.Clear();
             txtOutput.Clear();
         }
 

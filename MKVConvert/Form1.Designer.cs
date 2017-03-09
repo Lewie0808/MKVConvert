@@ -66,12 +66,16 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.ChkBxMKV = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtBxFileCount = new System.Windows.Forms.TextBox();
             this.grpBxFiles.SuspendLayout();
             this.grpBxDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sameAs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSD
@@ -334,17 +338,17 @@
             // 
             // txtBxAfter
             // 
-            this.txtBxAfter.Location = new System.Drawing.Point(74, 162);
+            this.txtBxAfter.Location = new System.Drawing.Point(87, 162);
             this.txtBxAfter.Name = "txtBxAfter";
-            this.txtBxAfter.Size = new System.Drawing.Size(144, 20);
+            this.txtBxAfter.Size = new System.Drawing.Size(105, 20);
             this.txtBxAfter.TabIndex = 31;
             this.txtBxAfter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtBxBefore
             // 
-            this.txtBxBefore.Location = new System.Drawing.Point(74, 109);
+            this.txtBxBefore.Location = new System.Drawing.Point(87, 109);
             this.txtBxBefore.Name = "txtBxBefore";
-            this.txtBxBefore.Size = new System.Drawing.Size(144, 20);
+            this.txtBxBefore.Size = new System.Drawing.Size(105, 20);
             this.txtBxBefore.TabIndex = 30;
             this.txtBxBefore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -410,7 +414,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(389, 259);
+            this.btnClose.Location = new System.Drawing.Point(389, 322);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 23);
             this.btnClose.TabIndex = 10;
@@ -422,7 +426,7 @@
             // 
             this.ChkBxMKV.AutoSize = true;
             this.ChkBxMKV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ChkBxMKV.Location = new System.Drawing.Point(6, 19);
+            this.ChkBxMKV.Location = new System.Drawing.Point(74, 19);
             this.ChkBxMKV.Name = "ChkBxMKV";
             this.ChkBxMKV.Size = new System.Drawing.Size(106, 17);
             this.ChkBxMKV.TabIndex = 11;
@@ -432,18 +436,47 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ChkBxMKV);
-            this.groupBox1.Location = new System.Drawing.Point(315, 211);
+            this.groupBox1.Location = new System.Drawing.Point(315, 262);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(243, 42);
+            this.groupBox1.Size = new System.Drawing.Size(243, 54);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MKV Files";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtBxFileCount);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Location = new System.Drawing.Point(315, 207);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(243, 49);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "File count";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "File count";
+            // 
+            // txtBxFileCount
+            // 
+            this.txtBxFileCount.Location = new System.Drawing.Point(87, 20);
+            this.txtBxFileCount.Name = "txtBxFileCount";
+            this.txtBxFileCount.Size = new System.Drawing.Size(105, 20);
+            this.txtBxFileCount.TabIndex = 1;
+            this.txtBxFileCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 357);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpBxDisplay);
@@ -462,6 +495,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.arrowDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -505,6 +540,9 @@
         private System.Windows.Forms.PictureBox sameAs;
         private System.Windows.Forms.CheckBox ChkBxMKV;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtBxFileCount;
+        private System.Windows.Forms.Label label13;
     }
 }
 
