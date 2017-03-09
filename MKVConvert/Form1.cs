@@ -798,21 +798,7 @@ namespace MKVConvert
         {
             this.Close();
         }
-
-        public void BuildString(object sender, EventArgs e)
-        {
-            int converted = 0;
-            int errors = 0;
-
-            var message = new StringBuilder();
-            message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
-            message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
-            message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
-            message.AppendLine(txtOutput.Text + "MKVs: ");
-
-            MessageBox.Show(message.ToString());
-        }
-
+               
         private void TxtOutput_TextChanged(object sender, EventArgs e)
         {
             txtOutput.SelectionStart = txtOutput.Text.Length;
