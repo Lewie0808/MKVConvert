@@ -67,8 +67,12 @@
             this.ChkBxMKV = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.txtBxFileCount = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.mkvChkBx = new System.Windows.Forms.CheckBox();
+            this.aviChkBox = new System.Windows.Forms.CheckBox();
+            this.tsChkBx = new System.Windows.Forms.CheckBox();
+            this.mp4ChkBx = new System.Windows.Forms.CheckBox();
             this.grpBxFiles.SuspendLayout();
             this.grpBxDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sameAs)).BeginInit();
@@ -383,7 +387,7 @@
             // 
             this.sameAs.Image = global::MKVConvert.Properties.Resources.Same;
             this.sameAs.InitialImage = null;
-            this.sameAs.Location = new System.Drawing.Point(133, 135);
+            this.sameAs.Location = new System.Drawing.Point(126, 135);
             this.sameAs.Name = "sameAs";
             this.sameAs.Size = new System.Drawing.Size(23, 24);
             this.sameAs.TabIndex = 36;
@@ -394,7 +398,7 @@
             // 
             this.arrowUp.Image = global::MKVConvert.Properties.Resources.up;
             this.arrowUp.InitialImage = null;
-            this.arrowUp.Location = new System.Drawing.Point(133, 135);
+            this.arrowUp.Location = new System.Drawing.Point(126, 135);
             this.arrowUp.Name = "arrowUp";
             this.arrowUp.Size = new System.Drawing.Size(23, 24);
             this.arrowUp.TabIndex = 35;
@@ -405,7 +409,7 @@
             // 
             this.arrowDown.Image = global::MKVConvert.Properties.Resources.down;
             this.arrowDown.InitialImage = null;
-            this.arrowDown.Location = new System.Drawing.Point(133, 135);
+            this.arrowDown.Location = new System.Drawing.Point(126, 135);
             this.arrowDown.Name = "arrowDown";
             this.arrowDown.Size = new System.Drawing.Size(23, 24);
             this.arrowDown.TabIndex = 34;
@@ -426,22 +430,26 @@
             // 
             this.ChkBxMKV.AutoSize = true;
             this.ChkBxMKV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ChkBxMKV.Location = new System.Drawing.Point(74, 19);
+            this.ChkBxMKV.Location = new System.Drawing.Point(6, 19);
             this.ChkBxMKV.Name = "ChkBxMKV";
-            this.ChkBxMKV.Size = new System.Drawing.Size(106, 17);
+            this.ChkBxMKV.Size = new System.Drawing.Size(88, 17);
             this.ChkBxMKV.TabIndex = 11;
-            this.ChkBxMKV.Text = "Include MKV files";
+            this.ChkBxMKV.Text = "Include MKV ";
             this.ChkBxMKV.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mp4ChkBx);
+            this.groupBox1.Controls.Add(this.tsChkBx);
+            this.groupBox1.Controls.Add(this.aviChkBox);
+            this.groupBox1.Controls.Add(this.mkvChkBx);
             this.groupBox1.Controls.Add(this.ChkBxMKV);
             this.groupBox1.Location = new System.Drawing.Point(315, 262);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(243, 54);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "MKV Files";
+            this.groupBox1.Text = "Files";
             // 
             // groupBox2
             // 
@@ -454,6 +462,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "File count";
             // 
+            // txtBxFileCount
+            // 
+            this.txtBxFileCount.Location = new System.Drawing.Point(87, 20);
+            this.txtBxFileCount.Name = "txtBxFileCount";
+            this.txtBxFileCount.Size = new System.Drawing.Size(105, 20);
+            this.txtBxFileCount.TabIndex = 1;
+            this.txtBxFileCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -463,13 +479,45 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "File count";
             // 
-            // txtBxFileCount
+            // mkvChkBx
             // 
-            this.txtBxFileCount.Location = new System.Drawing.Point(87, 20);
-            this.txtBxFileCount.Name = "txtBxFileCount";
-            this.txtBxFileCount.Size = new System.Drawing.Size(105, 20);
-            this.txtBxFileCount.TabIndex = 1;
-            this.txtBxFileCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mkvChkBx.AutoSize = true;
+            this.mkvChkBx.Location = new System.Drawing.Point(100, 10);
+            this.mkvChkBx.Name = "mkvChkBx";
+            this.mkvChkBx.Size = new System.Drawing.Size(49, 17);
+            this.mkvChkBx.TabIndex = 12;
+            this.mkvChkBx.Text = "MKV";
+            this.mkvChkBx.UseVisualStyleBackColor = true;
+            // 
+            // aviChkBox
+            // 
+            this.aviChkBox.AutoSize = true;
+            this.aviChkBox.Location = new System.Drawing.Point(100, 31);
+            this.aviChkBox.Name = "aviChkBox";
+            this.aviChkBox.Size = new System.Drawing.Size(43, 17);
+            this.aviChkBox.TabIndex = 13;
+            this.aviChkBox.Text = "AVI";
+            this.aviChkBox.UseVisualStyleBackColor = true;
+            // 
+            // tsChkBx
+            // 
+            this.tsChkBx.AutoSize = true;
+            this.tsChkBx.Location = new System.Drawing.Point(156, 10);
+            this.tsChkBx.Name = "tsChkBx";
+            this.tsChkBx.Size = new System.Drawing.Size(40, 17);
+            this.tsChkBx.TabIndex = 14;
+            this.tsChkBx.Text = "TS";
+            this.tsChkBx.UseVisualStyleBackColor = true;
+            // 
+            // mp4ChkBx
+            // 
+            this.mp4ChkBx.AutoSize = true;
+            this.mp4ChkBx.Location = new System.Drawing.Point(156, 31);
+            this.mp4ChkBx.Name = "mp4ChkBx";
+            this.mp4ChkBx.Size = new System.Drawing.Size(48, 17);
+            this.mp4ChkBx.TabIndex = 15;
+            this.mp4ChkBx.Text = "MP4";
+            this.mp4ChkBx.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -543,6 +591,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtBxFileCount;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox aviChkBox;
+        private System.Windows.Forms.CheckBox mkvChkBx;
+        private System.Windows.Forms.CheckBox tsChkBx;
+        private System.Windows.Forms.CheckBox mp4ChkBx;
     }
 }
 

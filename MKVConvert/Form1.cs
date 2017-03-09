@@ -739,6 +739,31 @@ namespace MKVConvert
             var fileCount = Directory.EnumerateFiles(txtBxSource.Text, "*", SearchOption.AllDirectories).Count();
             txtBxFileCount.Text = fileCount.ToString();
 
+            string[] files = Directory.GetFiles(txtBxSource.Text, "*.*");
+            foreach (string currentFile in files)
+            {
+                if (currentFile.EndsWith("avi"))
+                {
+                    aviChkBox.Checked = true;
+                }
+                if (currentFile.EndsWith("mp4"))
+                {
+                    mp4ChkBx.Checked = true;
+                }
+                if(currentFile.EndsWith("ts"))
+                {
+                    tsChkBx.Checked = true;
+                }
+                if(currentFile.EndsWith("mkv"))
+                {
+                    mkvChkBx.Checked = true;
+                }
+            }
+            
+            if(mkvChkBx.Checked == true)
+            {
+                ChkBxMKV.Checked = true;
+            }
             txtBxAfter.Clear();
             txtOutput.Clear();
         }
