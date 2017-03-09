@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -58,8 +59,10 @@ namespace MKVConvert
                     {
 
                         // Create launch settings
-                        ProcessStartInfo psi = new ProcessStartInfo();
-                        psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe"
+                        };
                         if (copyAudio)
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxSDWid.Text + " -l " + txtBxSDHei.Text + " --modulus 8 -e x264 -b " + txtBxSDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
@@ -72,8 +75,10 @@ namespace MKVConvert
                         try
                         {
                             // Create process based on settings
-                            Process prc = new Process();
-                            prc.StartInfo = psi;
+                            Process prc = new Process()
+                            {
+                                StartInfo = psi
+                            };
                             prc.Start();
 
                             // Wait for process to exit
@@ -135,13 +140,14 @@ namespace MKVConvert
                 }
 
                 txtBxAfter.Text = InGB(afterSizeSD);
+                                
+                var message = new StringBuilder();
+                message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
+              
+                MessageBox.Show(message.ToString());
 
-                txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "MKVs: " +
-
-                MessageBox.Show("Job completed");
             }
 
             else
@@ -153,8 +159,10 @@ namespace MKVConvert
                     {
 
                         // Create launch settings
-                        ProcessStartInfo psi = new ProcessStartInfo();
-                        psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe"
+                        };
                         if (copyAudio)
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxSDWid.Text + " -l " + txtBxSDHei.Text + " --modulus 8 -e x264 -b " + txtBxSDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
@@ -167,8 +175,10 @@ namespace MKVConvert
                         try
                         {
                             // Create process based on settings
-                            Process prc = new Process();
-                            prc.StartInfo = psi;
+                            Process prc = new Process()
+                            {
+                                StartInfo = psi
+                            };
                             prc.Start();
 
                             // Wait for process to exit
@@ -231,12 +241,14 @@ namespace MKVConvert
 
                 txtBxAfter.Text = InGB(afterSizeSD);
 
-                txtOutput.Text = txtOutput.Text + "Job Complete" + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + "MKVs: " +
+                var message = new StringBuilder();
+                message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
+                message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
 
-                MessageBox.Show("Job completed");
+                MessageBox.Show(message.ToString());
+
+
             }
         }
 
@@ -281,8 +293,10 @@ namespace MKVConvert
                     if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("ts"))
                     {
                         // Create launch settings
-                        ProcessStartInfo psi = new ProcessStartInfo();
-                        psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe"
+                        };
                         if (copyAudio)
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -e x264 -b " + txtBxHDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
@@ -295,8 +309,10 @@ namespace MKVConvert
                         try
                         {
                             // Create process based on settings
-                            Process prc = new Process();
-                            prc.StartInfo = psi;
+                            Process prc = new Process()
+                            {
+                                StartInfo = psi
+                            };
                             prc.Start();
 
                             // Wait for process to exit
@@ -373,8 +389,10 @@ namespace MKVConvert
                     if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("ts") || currentFile.EndsWith("mkv"))
                     {
                         // Create launch settings
-                        ProcessStartInfo psi = new ProcessStartInfo();
-                        psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe"
+                        };
                         if (copyAudio)
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -e x264 -b " + txtBxHDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
@@ -387,8 +405,10 @@ namespace MKVConvert
                         try
                         {
                             // Create process based on settings
-                            Process prc = new Process();
-                            prc.StartInfo = psi;
+                            Process prc = new Process()
+                            {
+                                StartInfo = psi
+                            };
                             prc.Start();
 
                             // Wait for process to exit
@@ -503,8 +523,10 @@ namespace MKVConvert
                     if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("ts"))
                     {
                         // Create launch settings
-                        ProcessStartInfo psi = new ProcessStartInfo();
-                        psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe"
+                        };
                         if (copyAudio)
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxHD2HDWid + " -l " + txtBxHD2HDHei + " --modulus 8 -e x264 -b " + txtBxHD2HDBR + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
@@ -517,9 +539,10 @@ namespace MKVConvert
                         try
                         {
                             // Create process based on settings
-                            Process prc = new Process();
-                            prc.StartInfo = psi;
-
+                            Process prc = new Process()
+                            {
+                                StartInfo = psi
+                            };
                             prc.Start();
 
                             // Wait for process to exit
@@ -596,8 +619,10 @@ namespace MKVConvert
                     if (currentFile.EndsWith("avi") || currentFile.EndsWith("mp4") || currentFile.EndsWith("ts") || currentFile.EndsWith("mkv"))
                     {
                         // Create launch settings
-                        ProcessStartInfo psi = new ProcessStartInfo();
-                        psi.FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe";
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = @"C:\Program Files\Handbrake\HandBrakeCLI.exe"
+                        };
                         if (copyAudio)
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxHD2HDWid + " -l " + txtBxHD2HDHei + " --modulus 8 -e x264 -b " + txtBxHD2HDBR + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
@@ -610,9 +635,10 @@ namespace MKVConvert
                         try
                         {
                             // Create process based on settings
-                            Process prc = new Process();
-                            prc.StartInfo = psi;
-
+                            Process prc = new Process()
+                            {
+                                StartInfo = psi
+                            };
                             prc.Start();
 
                             // Wait for process to exit
@@ -757,13 +783,10 @@ namespace MKVConvert
                 if(currentFile.EndsWith("mkv"))
                 {
                     mkvChkBx.Checked = true;
+                    ChkBxMKV.Checked = true;
                 }
-            }
-            
-            if(mkvChkBx.Checked == true)
-            {
-                ChkBxMKV.Checked = true;
-            }
+            }         
+
             txtBxAfter.Clear();
             txtOutput.Clear();
         }
@@ -771,6 +794,20 @@ namespace MKVConvert
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void BuildString(object sender, EventArgs e)
+        {
+            int converted = 0;
+            int errors = 0;
+
+            var message = new StringBuilder();
+            message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
+            message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
+            message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
+            message.AppendLine(txtOutput.Text + "MKVs: ");
+
+            MessageBox.Show(message.ToString());
         }
 
         private void TxtOutput_TextChanged(object sender, EventArgs e)
