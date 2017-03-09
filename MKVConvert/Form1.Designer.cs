@@ -86,7 +86,7 @@
             this.btnSD.TabIndex = 0;
             this.btnSD.Text = "SD";
             this.btnSD.UseVisualStyleBackColor = true;
-            this.btnSD.Click += new System.EventHandler(this.btnSD_Click);
+            this.btnSD.Click += new System.EventHandler(this.BtnSD_Click);
             // 
             // txtBxSource
             // 
@@ -296,7 +296,7 @@
             this.btnHD.TabIndex = 8;
             this.btnHD.Text = "HD";
             this.btnHD.UseVisualStyleBackColor = true;
-            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
+            this.btnHD.Click += new System.EventHandler(this.BtnHD_Click);
             // 
             // btnHD2HD
             // 
@@ -306,7 +306,7 @@
             this.btnHD2HD.TabIndex = 7;
             this.btnHD2HD.Text = "HD2HD";
             this.btnHD2HD.UseVisualStyleBackColor = true;
-            this.btnHD2HD.Click += new System.EventHandler(this.btnHD2HD_Click);
+            this.btnHD2HD.Click += new System.EventHandler(this.BtnHD2HD_Click);
             // 
             // btnSourceBrow
             // 
@@ -316,7 +316,7 @@
             this.btnSourceBrow.TabIndex = 6;
             this.btnSourceBrow.Text = "Browse";
             this.btnSourceBrow.UseVisualStyleBackColor = true;
-            this.btnSourceBrow.Click += new System.EventHandler(this.btnSourceBrow_Click);
+            this.btnSourceBrow.Click += new System.EventHandler(this.BtnSourceBrow_Click);
             // 
             // label12
             // 
@@ -360,7 +360,7 @@
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtOutput.Size = new System.Drawing.Size(231, 80);
             this.txtOutput.TabIndex = 8;
-            this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
+            this.txtOutput.TextChanged += new System.EventHandler(this.TxtOutput_TextChanged);
             // 
             // grpBxDisplay
             // 
@@ -420,7 +420,7 @@
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // ChkBxMKV
             // 

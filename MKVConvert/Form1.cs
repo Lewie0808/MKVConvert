@@ -15,12 +15,12 @@ namespace MKVConvert
             InitializeComponent();
         }
 
-        private void btnSD_Click(object sender, EventArgs e)
+        private void BtnSD_Click(object sender, EventArgs e)
         {
             if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
             {
                 btnSD.BackColor = Color.Green;
-                encodeSD();
+                EncodeSD();
             }
             else
             {
@@ -28,7 +28,7 @@ namespace MKVConvert
                 DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
+                    Process.Start("https://handbrake.fr/downloads.php");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -39,10 +39,10 @@ namespace MKVConvert
             } 
         }
 
-        public void encodeSD(bool copyAudio = true)
+        public void EncodeSD(bool copyAudio = true)
         {
             string[] beforeDirSD = Directory.GetFiles(txtBxSource.Text, "*.*");
-            long beforeSizeSD = sizes(beforeDirSD);
+            long beforeSizeSD = Sizes(beforeDirSD);
 
             string[] files = Directory.GetFiles(txtBxSource.Text, "*.*");
 
@@ -112,7 +112,7 @@ namespace MKVConvert
                 }
 
                 string[] afterDirSD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeSD = sizes(afterDirSD);
+                long afterSizeSD = Sizes(afterDirSD);
 
                 if (afterSizeSD > beforeSizeSD == true)
                 {
@@ -207,7 +207,7 @@ namespace MKVConvert
                 }
 
                 string[] afterDirSD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeSD = sizes(afterDirSD);
+                long afterSizeSD = Sizes(afterDirSD);
 
                 if (afterSizeSD > beforeSizeSD == true)
                 {
@@ -240,12 +240,12 @@ namespace MKVConvert
             }
         }
 
-        private void btnHD_Click(object sender, EventArgs e)
+        private void BtnHD_Click(object sender, EventArgs e)
         {
             if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
             {
                 btnHD.BackColor = Color.Green;
-                encodeHD();
+                EncodeHD();
             }
             else
             {
@@ -264,10 +264,10 @@ namespace MKVConvert
             }
         }
 
-        public void encodeHD(bool copyAudio = true)
+        public void EncodeHD(bool copyAudio = true)
         {
             string[] beforeDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
-            long beforeSizeHD = sizes(beforeDirHD);
+            long beforeSizeHD = Sizes(beforeDirHD);
 
             int converted = 0;
             int errors = 0;
@@ -335,7 +335,7 @@ namespace MKVConvert
                 }
 
                 string[] afterDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeHD = sizes(afterDirHD);
+                long afterSizeHD = Sizes(afterDirHD);
 
                 if (afterSizeHD > beforeSizeHD == true)
                 {
@@ -427,7 +427,7 @@ namespace MKVConvert
                 }
 
                 string[] afterDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeHD = sizes(afterDirHD);
+                long afterSizeHD = Sizes(afterDirHD);
 
                 if (afterSizeHD > beforeSizeHD == true)
                 {
@@ -460,12 +460,12 @@ namespace MKVConvert
            
         }
              
-        private void btnHD2HD_Click(object sender, EventArgs e)
+        private void BtnHD2HD_Click(object sender, EventArgs e)
         {
             if (File.Exists(@"C:\Program Files\Handbrake\Handbrake.exe"))
             {
                 btnHD2HD.BackColor = Color.Green;
-                encodeHD2HD();
+                EncodeHD2HD();
             }
             else
             {
@@ -484,10 +484,10 @@ namespace MKVConvert
             }
         }
 
-        public void encodeHD2HD()
+        public void EncodeHD2HD()
         {
             string[] beforeDirHD2HD = Directory.GetFiles(txtBxSource.Text, "*.*");
-            long beforeSizeHD2HD = sizes(beforeDirHD2HD);
+            long beforeSizeHD2HD = Sizes(beforeDirHD2HD);
 
             int converted = 0;
             int errors = 0;
@@ -558,7 +558,7 @@ namespace MKVConvert
                 }
 
                 string[] afterDirHD2HD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeHD2HD = sizes(afterDirHD2HD);
+                long afterSizeHD2HD = Sizes(afterDirHD2HD);
 
                 if (afterSizeHD2HD > beforeSizeHD2HD == true)
                 {
@@ -651,7 +651,7 @@ namespace MKVConvert
                 }
 
                 string[] afterDirHD2HD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeHD2HD = sizes(afterDirHD2HD);
+                long afterSizeHD2HD = Sizes(afterDirHD2HD);
 
                 if (afterSizeHD2HD > beforeSizeHD2HD == true)
                 {
@@ -683,7 +683,7 @@ namespace MKVConvert
             }
         }
 
-        private static long sizes(string[] path)
+        private static long Sizes(string[] path)
         {
             long temp = 0;
 
@@ -714,7 +714,7 @@ namespace MKVConvert
 
         }
 
-        private void btnSourceBrow_Click(object sender, EventArgs e)
+        private void BtnSourceBrow_Click(object sender, EventArgs e)
         {
             btnSD.BackColor = default(Color);
             btnHD.BackColor = default(Color);
@@ -732,7 +732,7 @@ namespace MKVConvert
                 txtBxSource.Text = folderPath;
             }
             string[] beforeDir = Directory.GetFiles(txtBxSource.Text, "*.*");
-            long beforeSize = sizes(beforeDir);
+            long beforeSize = Sizes(beforeDir);
 
             txtBxBefore.Text = InGB(beforeSize);
 
@@ -743,12 +743,12 @@ namespace MKVConvert
             txtOutput.Clear();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void txtOutput_TextChanged(object sender, EventArgs e)
+        private void TxtOutput_TextChanged(object sender, EventArgs e)
         {
             txtOutput.SelectionStart = txtOutput.Text.Length;
             txtOutput.ScrollToCaret();
