@@ -740,7 +740,29 @@ namespace MKVConvert
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            txtBxSource.AllowDrop = true;
+            txtBxSource.DragEnter += new DragEventHandler(TxtBxSource_DragEnter);
+            txtBxSource.DragDrop += new DragEventHandler(TxtBxSource_DragDrop);
+        }
 
+        private void TxtBxSource_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] fileList = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+
+            string s = "";
+
+            foreach (string file in fileList)
+                s = s + " " + file;
+            txtBxSource.Text = s;
+        }
+
+        private static void TxtBxSource_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+
+            else
+                e.Effect = DragDropEffects.None;
         }
 
         private void BtnSourceBrow_Click(object sender, EventArgs e)

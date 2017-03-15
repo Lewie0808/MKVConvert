@@ -66,13 +66,13 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.ChkBxMKV = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mp4ChkBx = new System.Windows.Forms.CheckBox();
+            this.tsChkBx = new System.Windows.Forms.CheckBox();
+            this.aviChkBox = new System.Windows.Forms.CheckBox();
+            this.mkvChkBx = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtBxFileCount = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.mkvChkBx = new System.Windows.Forms.CheckBox();
-            this.aviChkBox = new System.Windows.Forms.CheckBox();
-            this.tsChkBx = new System.Windows.Forms.CheckBox();
-            this.mp4ChkBx = new System.Windows.Forms.CheckBox();
             this.grpBxFiles.SuspendLayout();
             this.grpBxDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sameAs)).BeginInit();
@@ -94,6 +94,7 @@
             // 
             // txtBxSource
             // 
+            this.txtBxSource.AllowDrop = true;
             this.txtBxSource.Location = new System.Drawing.Point(59, 19);
             this.txtBxSource.Name = "txtBxSource";
             this.txtBxSource.Size = new System.Drawing.Size(188, 20);
@@ -451,6 +452,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Files";
             // 
+            // mp4ChkBx
+            // 
+            this.mp4ChkBx.AutoSize = true;
+            this.mp4ChkBx.Location = new System.Drawing.Point(156, 31);
+            this.mp4ChkBx.Name = "mp4ChkBx";
+            this.mp4ChkBx.Size = new System.Drawing.Size(48, 17);
+            this.mp4ChkBx.TabIndex = 15;
+            this.mp4ChkBx.Text = "MP4";
+            this.mp4ChkBx.UseVisualStyleBackColor = true;
+            // 
+            // tsChkBx
+            // 
+            this.tsChkBx.AutoSize = true;
+            this.tsChkBx.Location = new System.Drawing.Point(156, 10);
+            this.tsChkBx.Name = "tsChkBx";
+            this.tsChkBx.Size = new System.Drawing.Size(40, 17);
+            this.tsChkBx.TabIndex = 14;
+            this.tsChkBx.Text = "TS";
+            this.tsChkBx.UseVisualStyleBackColor = true;
+            // 
+            // aviChkBox
+            // 
+            this.aviChkBox.AutoSize = true;
+            this.aviChkBox.Location = new System.Drawing.Point(100, 31);
+            this.aviChkBox.Name = "aviChkBox";
+            this.aviChkBox.Size = new System.Drawing.Size(43, 17);
+            this.aviChkBox.TabIndex = 13;
+            this.aviChkBox.Text = "AVI";
+            this.aviChkBox.UseVisualStyleBackColor = true;
+            // 
+            // mkvChkBx
+            // 
+            this.mkvChkBx.AutoSize = true;
+            this.mkvChkBx.Location = new System.Drawing.Point(100, 10);
+            this.mkvChkBx.Name = "mkvChkBx";
+            this.mkvChkBx.Size = new System.Drawing.Size(49, 17);
+            this.mkvChkBx.TabIndex = 12;
+            this.mkvChkBx.Text = "MKV";
+            this.mkvChkBx.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtBxFileCount);
@@ -479,48 +520,9 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "File count";
             // 
-            // mkvChkBx
-            // 
-            this.mkvChkBx.AutoSize = true;
-            this.mkvChkBx.Location = new System.Drawing.Point(100, 10);
-            this.mkvChkBx.Name = "mkvChkBx";
-            this.mkvChkBx.Size = new System.Drawing.Size(49, 17);
-            this.mkvChkBx.TabIndex = 12;
-            this.mkvChkBx.Text = "MKV";
-            this.mkvChkBx.UseVisualStyleBackColor = true;
-            // 
-            // aviChkBox
-            // 
-            this.aviChkBox.AutoSize = true;
-            this.aviChkBox.Location = new System.Drawing.Point(100, 31);
-            this.aviChkBox.Name = "aviChkBox";
-            this.aviChkBox.Size = new System.Drawing.Size(43, 17);
-            this.aviChkBox.TabIndex = 13;
-            this.aviChkBox.Text = "AVI";
-            this.aviChkBox.UseVisualStyleBackColor = true;
-            // 
-            // tsChkBx
-            // 
-            this.tsChkBx.AutoSize = true;
-            this.tsChkBx.Location = new System.Drawing.Point(156, 10);
-            this.tsChkBx.Name = "tsChkBx";
-            this.tsChkBx.Size = new System.Drawing.Size(40, 17);
-            this.tsChkBx.TabIndex = 14;
-            this.tsChkBx.Text = "TS";
-            this.tsChkBx.UseVisualStyleBackColor = true;
-            // 
-            // mp4ChkBx
-            // 
-            this.mp4ChkBx.AutoSize = true;
-            this.mp4ChkBx.Location = new System.Drawing.Point(156, 31);
-            this.mp4ChkBx.Name = "mp4ChkBx";
-            this.mp4ChkBx.Size = new System.Drawing.Size(48, 17);
-            this.mp4ChkBx.TabIndex = 15;
-            this.mp4ChkBx.Text = "MP4";
-            this.mp4ChkBx.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 357);
