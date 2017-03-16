@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace MKVConvert
 {
-    public partial class Form1 : Form
+    public partial class Convert : Form
     {
-        public Form1()
+        public Convert()
         {
             InitializeComponent();
         }
@@ -116,17 +116,17 @@ namespace MKVConvert
                     }
                 }
 
-                string[] afterDirSD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeSD = Sizes(afterDirSD);
+                string[] afterDirSd = Directory.GetFiles(txtBxSource.Text, "*.*");
+                long afterSizeSd = Sizes(afterDirSd);
 
-                if (afterSizeSD > beforeSizeSd == true)
+                if (afterSizeSd > beforeSizeSd == true)
                 {
                     arrowUp.Image = Properties.Resources.up;
                     arrowUp.Visible = true;
 
                 }
 
-                if (afterSizeSD < beforeSizeSd == true)
+                if (afterSizeSd < beforeSizeSd == true)
                 {
                     arrowDown.Image = Properties.Resources.down;
                     arrowDown.Visible = true;
@@ -139,7 +139,7 @@ namespace MKVConvert
 
                 }
 
-                txtBxAfter.Text = InGb(afterSizeSD);
+                txtBxAfter.Text = InGb(afterSizeSd);
                                 
                 var message = new StringBuilder();
                 message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
@@ -216,17 +216,17 @@ namespace MKVConvert
                     }
                 }
 
-                string[] afterDirSD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeSD = Sizes(afterDirSD);
+                string[] afterDirSd = Directory.GetFiles(txtBxSource.Text, "*.*");
+                long afterSizeSd = Sizes(afterDirSd);
 
-                if (afterSizeSD > beforeSizeSd == true)
+                if (afterSizeSd > beforeSizeSd == true)
                 {
                     arrowUp.Image = Properties.Resources.up;
                     arrowUp.Visible = true;
 
                 }
 
-                if (afterSizeSD < beforeSizeSd == true)
+                if (afterSizeSd < beforeSizeSd == true)
                 {
                     arrowDown.Image = Properties.Resources.down;
                     arrowDown.Visible = true;
@@ -239,7 +239,7 @@ namespace MKVConvert
 
                 }
 
-                txtBxAfter.Text = InGb(afterSizeSD);
+                txtBxAfter.Text = InGb(afterSizeSd);
 
                 var message = new StringBuilder();
                 message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
@@ -264,7 +264,7 @@ namespace MKVConvert
                 DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
+                    Process.Start("https://handbrake.fr/downloads.php");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -349,17 +349,17 @@ namespace MKVConvert
                     }
                 }
 
-                string[] afterDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeHD = Sizes(afterDirHD);
+                string[] afterDirHd = Directory.GetFiles(txtBxSource.Text, "*.*");
+                long afterSizeHd = Sizes(afterDirHd);
 
-                if (afterSizeHD > beforeSizeHd == true)
+                if (afterSizeHd > beforeSizeHd == true)
                 {
                     arrowUp.Image = Properties.Resources.up;
                     arrowUp.Visible = true;
 
                 }
 
-                if (afterSizeHD < beforeSizeHd == true)
+                if (afterSizeHd < beforeSizeHd == true)
                 {
                     arrowDown.Image = Properties.Resources.down;
                     arrowDown.Visible = true;
@@ -372,7 +372,7 @@ namespace MKVConvert
 
                 }
 
-                txtBxAfter.Text = InGb(afterSizeHD);
+                txtBxAfter.Text = InGb(afterSizeHd);
 
                 var message = new StringBuilder();
                 message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
@@ -446,17 +446,17 @@ namespace MKVConvert
                     }
                 }
 
-                string[] afterDirHD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeHD = Sizes(afterDirHD);
+                string[] afterDirHd = Directory.GetFiles(txtBxSource.Text, "*.*");
+                long afterSizeHd = Sizes(afterDirHd);
 
-                if (afterSizeHD > beforeSizeHd == true)
+                if (afterSizeHd > beforeSizeHd == true)
                 {
                     arrowUp.Image = Properties.Resources.up;
                     arrowUp.Visible = true;
 
                 }
 
-                if (afterSizeHD < beforeSizeHd == true)
+                if (afterSizeHd < beforeSizeHd == true)
                 {
                     arrowDown.Image = Properties.Resources.down;
                     arrowDown.Visible = true;
@@ -469,7 +469,7 @@ namespace MKVConvert
 
                 }
 
-                txtBxAfter.Text = InGb(afterSizeHD);
+                txtBxAfter.Text = InGb(afterSizeHd);
 
                 var message = new StringBuilder();
                 message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
@@ -494,7 +494,7 @@ namespace MKVConvert
                 DialogResult dialogResult = MessageBox.Show("Handbreak is not installed, do you want to install?", "Handbreak installation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start("https://handbrake.fr/downloads.php");
+                    Process.Start("https://handbrake.fr/downloads.php");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -581,17 +581,17 @@ namespace MKVConvert
                     }
                 }
 
-                string[] afterDirHD2HD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeHD2HD = Sizes(afterDirHD2HD);
+                string[] afterDirHd2Hd = Directory.GetFiles(txtBxSource.Text, "*.*");
+                long afterSizeHd2Hd = Sizes(afterDirHd2Hd);
 
-                if (afterSizeHD2HD > beforeSizeHd2Hd == true)
+                if (afterSizeHd2Hd > beforeSizeHd2Hd == true)
                 {
                     arrowUp.Image = Properties.Resources.up;
                     arrowUp.Visible = true;
 
                 }
 
-                if (afterSizeHD2HD < beforeSizeHd2Hd == true)
+                if (afterSizeHd2Hd < beforeSizeHd2Hd == true)
                 {
                     arrowDown.Image = Properties.Resources.down;
                     arrowDown.Visible = true;
@@ -604,7 +604,7 @@ namespace MKVConvert
 
                 }
 
-                txtBxAfter.Text = InGb(afterSizeHD2HD);
+                txtBxAfter.Text = InGb(afterSizeHd2Hd);
 
                 var message = new StringBuilder();
                 message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
@@ -678,17 +678,17 @@ namespace MKVConvert
                     }
                 }
 
-                string[] afterDirHD2HD = Directory.GetFiles(txtBxSource.Text, "*.*");
-                long afterSizeHD2HD = Sizes(afterDirHD2HD);
+                string[] afterDirHd2Hd = Directory.GetFiles(txtBxSource.Text, "*.*");
+                long afterSizeHd2Hd = Sizes(afterDirHd2Hd);
 
-                if (afterSizeHD2HD > beforeSizeHd2Hd == true)
+                if (afterSizeHd2Hd > beforeSizeHd2Hd == true)
                 {
                     arrowUp.Image = Properties.Resources.up;
                     arrowUp.Visible = true;
 
                 }
 
-                if (afterSizeHD2HD < beforeSizeHd2Hd == true)
+                if (afterSizeHd2Hd < beforeSizeHd2Hd == true)
                 {
                     arrowDown.Image = Properties.Resources.down;
                     arrowDown.Visible = true;
@@ -701,7 +701,7 @@ namespace MKVConvert
 
                 }
 
-                txtBxAfter.Text = InGb(afterSizeHD2HD);
+                txtBxAfter.Text = InGb(afterSizeHd2Hd);
 
                 var message = new StringBuilder();
                 message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);

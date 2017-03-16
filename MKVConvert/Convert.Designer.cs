@@ -1,6 +1,6 @@
 ﻿namespace MKVConvert
 {
-    partial class Form1
+    partial class Convert
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Convert));
             this.btnSD = new System.Windows.Forms.Button();
             this.txtBxSource = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
