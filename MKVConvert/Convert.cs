@@ -67,10 +67,6 @@ namespace MKVConvert
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxSDWid.Text + " -l " + txtBxSDHei.Text + " --modulus 8 -e x264 -b " + txtBxSDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
                         }
-                        else
-                        {
-                            //psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + width + " -l " + height + " --modulus 8 -e x264 -b " + bitrate + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
-                        }
 
                         try
                         {
@@ -104,15 +100,19 @@ namespace MKVConvert
 
                                 string finalName = string.Empty;
                                 if (currentFile.EndsWith("ts"))
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2),
+                                        "mkv");
                                 else
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3),
+                                        "mkv");
 
                                 File.Move(currentFile + "-output.mkv", finalName);
                             }
                         }
                         catch
-                        { }
+                        {
+                            //Ignore
+                        }
                     }
                 }
 
@@ -167,10 +167,6 @@ namespace MKVConvert
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxSDWid.Text + " -l " + txtBxSDHei.Text + " --modulus 8 -e x264 -b " + txtBxSDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
                         }
-                        else
-                        {
-                            //psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + width + " -l " + height + " --modulus 8 -e x264 -b " + bitrate + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
-                        }
 
                         try
                         {
@@ -204,15 +200,19 @@ namespace MKVConvert
 
                                 string finalName = string.Empty;
                                 if (currentFile.EndsWith("ts"))
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2),
+                                        "mkv");
                                 else
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3),
+                                        "mkv");
 
                                 File.Move(currentFile + "-output.mkv", finalName);
                             }
                         }
                         catch
-                        { }
+                        {
+                            //Ignore
+                        }
                     }
                 }
 
@@ -300,10 +300,6 @@ namespace MKVConvert
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -e x264 -b " + txtBxHDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
                         }
-                        else
-                        {
-
-                        }
 
                         try
                         {
@@ -337,15 +333,19 @@ namespace MKVConvert
 
                                 string finalName = string.Empty;
                                 if (currentFile.EndsWith("ts"))
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2),
+                                        "mkv");
                                 else
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3),
+                                        "mkv");
 
                                 File.Move(currentFile + "-output.mkv", finalName);
                             }
                         }
                         catch
-                        { }
+                        {
+                            //Ignore
+                        }
                     }
                 }
 
@@ -397,11 +397,7 @@ namespace MKVConvert
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -e x264 -b " + txtBxHDBR.Text + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
                         }
-                        else
-                        {
-
-                        }
-
+                        
                         try
                         {
                             // Create process based on settings
@@ -434,15 +430,19 @@ namespace MKVConvert
 
                                 string finalName = string.Empty;
                                 if (currentFile.EndsWith("ts"))
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2),
+                                        "mkv");
                                 else
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3),
+                                        "mkv");
 
                                 File.Move(currentFile + "-output.mkv", finalName);
                             }
                         }
                         catch
-                        { }
+                        {
+                            //Ignore
+                        }
                     }
                 }
 
@@ -532,10 +532,6 @@ namespace MKVConvert
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxHD2HDWid + " -l " + txtBxHD2HDHei + " --modulus 8 -e x264 -b " + txtBxHD2HDBR + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
                         }
-                        else
-                        {
-
-                        }
 
                         try
                         {
@@ -569,15 +565,19 @@ namespace MKVConvert
 
                                 string finalName = string.Empty;
                                 if (currentFile.EndsWith("ts"))
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2),
+                                        "mkv");
                                 else
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3),
+                                        "mkv");
 
                                 File.Move(currentFile + "-output.mkv", finalName);
                             }
                         }
                         catch
-                        { }
+                        {
+                            //Ignore
+                        }
                     }
                 }
 
@@ -629,10 +629,6 @@ namespace MKVConvert
                         {
                             psi.Arguments = "-i \"" + currentFile + "\" -t 1 -o \"" + currentFile + "-output.mkv\" -f mkv -O -w " + txtBxHD2HDWid + " -l " + txtBxHD2HDHei + " --modulus 8 -e x264 -b " + txtBxHD2HDBR + " -2 --vfr -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0 --gain=0 --audio-copy-mask none --audio-fallback ffac3 -x weightp=1:subq=10:rc-lookahead=10:trellis=2:b-adapt=2:psy-rd=1.00,0.10 --verbose=1";
                         }
-                        else
-                        {
-
-                        }
 
                         try
                         {
@@ -666,15 +662,19 @@ namespace MKVConvert
 
                                 string finalName = string.Empty;
                                 if (currentFile.EndsWith("ts"))
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 2), 2),
+                                        "mkv");
                                 else
-                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3), "mkv");
+                                    finalName = currentFile.Replace(currentFile.Substring((currentFile.Length - 3), 3),
+                                        "mkv");
 
                                 File.Move(currentFile + "-output.mkv", finalName);
                             }
                         }
                         catch
-                        { }
+                        {
+                            //Ignore
+                        }
                     }
                 }
 
