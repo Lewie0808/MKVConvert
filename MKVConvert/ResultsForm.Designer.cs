@@ -39,7 +39,7 @@
             this.txtBxResultsForm.Name = "txtBxResultsForm";
             this.txtBxResultsForm.Size = new System.Drawing.Size(193, 138);
             this.txtBxResultsForm.TabIndex = 0;
-            this.txtBxResultsForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBxResultsForm.TextChanged += new System.EventHandler(this.txtBxResultsForm_TextChanged);
             // 
             // btnClose
             // 
@@ -59,7 +59,8 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtBxResultsForm);
             this.Name = "ResultsForm";
-            this.Text = "ResultsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Results";
             this.ResumeLayout(false);
             this.PerformLayout();
 

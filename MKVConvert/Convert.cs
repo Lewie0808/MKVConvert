@@ -145,13 +145,13 @@ namespace MKVConvert
                 message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
                 message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
                 message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
-              
+
+                txtOutput.Text = (message.ToString());
+
                 ResultsForm resultsForm = new ResultsForm();
                 resultsForm.TextBoxValue = (message.ToString());
                 resultsForm.Show();
-
-                //MessageBox.Show(message.ToString());
-
+                
             }
 
             else
@@ -250,12 +250,12 @@ namespace MKVConvert
                 message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
                 message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
 
+                txtOutput.Text = (message.ToString());
+
                 ResultsForm resultsForm = new ResultsForm();
                 resultsForm.TextBoxValue = (message.ToString());
                 resultsForm.Show();
-
-                //MessageBox.Show(message.ToString());
-
+                
             }
         }
 
@@ -387,7 +387,11 @@ namespace MKVConvert
                 message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
                 message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
 
-                MessageBox.Show(message.ToString());
+                txtOutput.Text = (message.ToString());
+
+                ResultsForm resultsForm = new ResultsForm();
+                resultsForm.TextBoxValue = (message.ToString());
+                resultsForm.Show();
             }
 
             else
@@ -484,7 +488,11 @@ namespace MKVConvert
                 message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
                 message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
 
-                MessageBox.Show(message.ToString());
+                txtOutput.Text = (message.ToString());
+
+                ResultsForm resultsForm = new ResultsForm();
+                resultsForm.TextBoxValue = (message.ToString());
+                resultsForm.Show();
             }
            
         }
@@ -619,7 +627,11 @@ namespace MKVConvert
                 message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
                 message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
 
-                MessageBox.Show(message.ToString());
+                txtOutput.Text = (message.ToString());
+
+                ResultsForm resultsForm = new ResultsForm();
+                resultsForm.TextBoxValue = (message.ToString());
+                resultsForm.Show();
             }
 
             else
@@ -715,8 +727,12 @@ namespace MKVConvert
                 message.AppendLine(txtOutput.Text + "Job Complete" + Environment.NewLine);
                 message.AppendLine(txtOutput.Text + "Converted: " + converted.ToString() + Environment.NewLine);
                 message.AppendLine(txtOutput.Text + "Errors: " + errors.ToString() + Environment.NewLine);
-                
-                MessageBox.Show(message.ToString());
+
+                txtOutput.Text = (message.ToString());
+
+                ResultsForm resultsForm = new ResultsForm();
+                resultsForm.TextBoxValue = (message.ToString());
+                resultsForm.Show();
             }
         }
 
