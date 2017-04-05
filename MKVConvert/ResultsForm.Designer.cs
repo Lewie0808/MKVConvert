@@ -37,6 +37,7 @@
             this.txtBxResultsForm.Location = new System.Drawing.Point(13, 13);
             this.txtBxResultsForm.Multiline = true;
             this.txtBxResultsForm.Name = "txtBxResultsForm";
+            this.txtBxResultsForm.ReadOnly = true;
             this.txtBxResultsForm.Size = new System.Drawing.Size(193, 138);
             this.txtBxResultsForm.TabIndex = 0;
             this.txtBxResultsForm.TextChanged += new System.EventHandler(this.txtBxResultsForm_TextChanged);
