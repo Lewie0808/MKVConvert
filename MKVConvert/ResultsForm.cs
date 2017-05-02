@@ -30,7 +30,7 @@ namespace MKVConvert
         
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void txtBxResultsForm_TextChanged(object sender, EventArgs e)

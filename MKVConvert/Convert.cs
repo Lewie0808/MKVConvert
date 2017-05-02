@@ -751,15 +751,15 @@ namespace MKVConvert
 
         private static string InGb(long bytes)
         {
-            string[] Suffix = { "B", "KB", "MB", "GB", "TB" };
+            string[] suffix = { "B", "KB", "MB", "GB", "TB" };
             int i;
             double dblSByte = bytes;
-            for (i = 0; i < Suffix.Length && bytes >= 1024; i++, bytes /= 1024)
+            for (i = 0; i < suffix.Length && bytes >= 1024; i++, bytes /= 1024)
             {
                 dblSByte = bytes / 1024.0;
             }
 
-            return String.Format("{0:0.##} {1}", dblSByte, Suffix[i]);
+            return String.Format("{0:0.##} {1}", dblSByte, suffix[i]);
         }
 
         private void Form1_Load(object sender, EventArgs e)
