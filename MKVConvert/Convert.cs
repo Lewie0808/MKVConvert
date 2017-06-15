@@ -148,8 +148,10 @@ namespace MKVConvert
 
                 txtOutput.Text = (message.ToString());
 
-                ResultsForm resultsForm = new ResultsForm();
-                resultsForm.TextBoxValue = (message.ToString());
+                ResultsForm resultsForm = new ResultsForm()
+                    {
+                        TextBoxValue = (message.ToString())
+                    };
                 resultsForm.Show();
                 
             }
@@ -252,8 +254,10 @@ namespace MKVConvert
 
                 txtOutput.Text = (message.ToString());
 
-                ResultsForm resultsForm = new ResultsForm();
-                resultsForm.TextBoxValue = (message.ToString());
+                ResultsForm resultsForm = new ResultsForm()
+                {
+                    TextBoxValue = (message.ToString())
+                };
                 resultsForm.Show();
                 
             }
@@ -389,8 +393,10 @@ namespace MKVConvert
 
                 txtOutput.Text = (message.ToString());
 
-                ResultsForm resultsForm = new ResultsForm();
-                resultsForm.TextBoxValue = (message.ToString());
+                ResultsForm resultsForm = new ResultsForm()
+                {
+                    TextBoxValue = (message.ToString())
+                };
                 resultsForm.Show();
             }
 
@@ -490,8 +496,10 @@ namespace MKVConvert
 
                 txtOutput.Text = (message.ToString());
 
-                ResultsForm resultsForm = new ResultsForm();
-                resultsForm.TextBoxValue = (message.ToString());
+                ResultsForm resultsForm = new ResultsForm()
+                {
+                    TextBoxValue = (message.ToString())
+                };
                 resultsForm.Show();
             }
            
@@ -629,8 +637,10 @@ namespace MKVConvert
 
                 txtOutput.Text = (message.ToString());
 
-                ResultsForm resultsForm = new ResultsForm();
-                resultsForm.TextBoxValue = (message.ToString());
+                ResultsForm resultsForm = new ResultsForm()
+                {
+                    TextBoxValue = (message.ToString())
+                };
                 resultsForm.Show();
             }
 
@@ -730,8 +740,10 @@ namespace MKVConvert
 
                 txtOutput.Text = (message.ToString());
 
-                ResultsForm resultsForm = new ResultsForm();
-                resultsForm.TextBoxValue = (message.ToString());
+                ResultsForm resultsForm = new ResultsForm()
+                {
+                    TextBoxValue = (message.ToString())
+                };
                 resultsForm.Show();
             }
         }
