@@ -1,0 +1,11 @@
+{
+  "ServerUri": "http://sonarcube:9000",
+  "Organization": null,
+  "ProjectKey": "MKVConvert",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AVzUYPr1vg9OcSnjphp3",
+      "ProfileTimestamp": "2017-06-23T10:55:45+01:00"
+    }
+  }
+}
